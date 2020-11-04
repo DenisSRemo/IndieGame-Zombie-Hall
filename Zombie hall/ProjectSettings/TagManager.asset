@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - EnterDoor
+  - ExitDoor
+  - Zombie
+  - Bullet
   layers:
   - Default
   - TransparentFX

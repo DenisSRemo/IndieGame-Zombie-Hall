@@ -67,7 +67,7 @@ public class player : MonoBehaviour
         Vector3 u;
         u.x = transform.position.x;
         u.y = transform.position.y;
-        u.z = -10.0f;
+        u.z = transform.position.z-10.0f;
         camera.transform.position = u;
 
         //rotate towards mouse
@@ -135,6 +135,68 @@ public class player : MonoBehaviour
 
         }
     }
+
+
+
+
+
+
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "EnterDoor" && Input.GetKeyDown(KeyCode.S))
+        {
+
+            Vector3 v;
+            v.x = transform.position.x;
+            v.y = -10.0f;
+            v.z = -15.0f;
+            transform.position = v;
+        }
+
+
+
+        if (collision.tag == "ExitDoor"&& Input.GetKeyDown(KeyCode.W))
+        {
+            Vector3 v;
+            v.x = transform.position.x;
+            v.y = 0;
+            v.z = 0f;
+            transform.position = v;
+        }
+
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "EnterDoor" && Input.GetKeyDown(KeyCode.S))
+        {
+
+            Vector3 v;
+            v.x = transform.position.x;
+            v.y = -10.0f;
+            v.z = -15.0f;
+            transform.position = v;
+        }
+
+
+
+        if (collision.tag == "ExitDoor" && Input.GetKeyDown(KeyCode.W))
+        {
+            Vector3 v;
+            v.x = transform.position.x;
+            v.y = 0;
+            v.z = 0f;
+            transform.position = v;
+        }
+
+
+    }
+
+
+
+
 
 
 }
