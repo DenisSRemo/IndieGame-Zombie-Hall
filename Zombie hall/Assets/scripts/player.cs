@@ -7,26 +7,26 @@ public class player : MonoBehaviour
 {
 
    [SerializeField] private LayerMask layer;
-    public float speed;
-    public int maxh;
-    public int currenth;
-    public float startTime;
+    [SerializeField] private float speed;
+    [SerializeField] private int maxh;
+    [SerializeField] private int currenth;
+    [SerializeField] private float startTime;
     private Rigidbody2D rb;
     private bool facingRight;
     private BoxCollider2D boxCollider2D;
-    public Camera camera;
-   
-    public Animator animator;
-   
-    
-    
-    
-   
-    public bool crouching = false;
-    public bool move = false;
-    
-    public bool right;
-    public Vector3 StartingPosition;
+    [SerializeField] private Camera camera;
+
+    [SerializeField] private Animator animator;
+
+
+
+
+
+    [SerializeField] private bool crouching = false;
+     private bool move = false;
+
+    [SerializeField] private bool right;
+    [SerializeField] private Vector3 StartingPosition;
 
 
     
@@ -142,58 +142,7 @@ public class player : MonoBehaviour
 
 
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.tag == "EnterDoor" && Input.GetKeyDown(KeyCode.S))
-        {
-
-            Vector3 v;
-            v.x = transform.position.x;
-            v.y = -10.0f;
-            v.z = -15.0f;
-            transform.position = v;
-        }
-
-
-
-        if (collision.tag == "ExitDoor"&& Input.GetKeyDown(KeyCode.W))
-        {
-            Vector3 v;
-            v.x = transform.position.x;
-            v.y = 0;
-            v.z = 0f;
-            transform.position = v;
-        }
-
-
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "EnterDoor" && Input.GetKeyDown(KeyCode.S))
-        {
-
-            Vector3 v;
-            v.x = transform.position.x;
-            v.y = -10.0f;
-            v.z = -15.0f;
-            transform.position = v;
-        }
-
-
-
-        if (collision.tag == "ExitDoor" && Input.GetKeyDown(KeyCode.W))
-        {
-            Vector3 v;
-            v.x = transform.position.x;
-            v.y = 0;
-            v.z = 0f;
-            transform.position = v;
-        }
-
-
-    }
-
+  
 
 
 
