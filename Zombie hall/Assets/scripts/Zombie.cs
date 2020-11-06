@@ -4,30 +4,44 @@ using UnityEngine;
 
 public class Zombie : MonoBehaviour
 {
-    private Transform target;
+   [SerializeField] public Transform target;
     public GameObject player;
     public float speed;
     public int health;
+    public Transform door;
+    [SerializeField]private List<Transform> positions;
+    private float timing;
+    public bool exiting;
     // Start is called before the first frame update
     void Start()
     {
-        speed = 3f;
+        speed = 2f;
         health = 100;
+        timing = Time.time;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        target = player.transform;
+
+        if (player.transform.position.y - gameObject.transform.position.y <= 5)
+            target = player.transform;
+        
+        else
+            target = door;
         transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        
     }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Bullet")
-            health = health - 25;
+            health = health - 10;
         if (health <= 0)
             Destroy(gameObject);
+        if (collision.tag == "ExitDoor")
+            exiting = true;
     }
 }

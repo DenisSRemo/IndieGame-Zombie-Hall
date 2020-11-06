@@ -28,7 +28,7 @@ public class player : MonoBehaviour
     [SerializeField] private bool right;
     [SerializeField] private Vector3 StartingPosition;
 
-
+    private bool exitDoor;
     
 
 
@@ -83,9 +83,10 @@ public class player : MonoBehaviour
           
 
         }
-        
-           
 
+        if (Input.GetKeyDown(KeyCode.W))
+
+            exitDoor = true;
 
 
 
