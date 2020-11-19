@@ -20,6 +20,7 @@ public class ExitDoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
     }
 
 
@@ -56,10 +57,10 @@ public class ExitDoor : MonoBehaviour
 
         if (collision.tag == "Zombie")
         {
-            zombies.Add(collision);
+            Zombie zombie = collision.gameObject.GetComponent<Zombie>();
             
 
-            if (zombies.Count != 0 && Time.time-timing >= 0)
+            if (zombie.exiting)
             {
                 
                 Vector3 u = A.transform.position;

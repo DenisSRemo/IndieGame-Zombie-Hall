@@ -47,9 +47,22 @@ public class EnterDoor : MonoBehaviour
             Player.transform.position = u;
         }
 
-        
 
 
+        //if (collision.tag == "Zombie")
+        //{
+        //    Zombie zombie = collision.gameObject.GetComponent<Zombie>();
+
+
+        //    if (zombie.exiting)
+        //    {
+
+        //        Vector3 u = A.transform.position;
+        //        zombies[0].transform.position = u;
+        //        zombies.Remove(zombies[0]);
+        //        timing = Time.time;
+        //    }
+        //}
 
 
 
