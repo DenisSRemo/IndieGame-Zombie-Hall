@@ -38,7 +38,7 @@ public class Zombie : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Bullet")
-            health = health - 10;
+            health = health - 20;
         if (health <= 0)
             Destroy(gameObject);
         if (collision.tag == "ExitDoor")
