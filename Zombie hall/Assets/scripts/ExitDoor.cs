@@ -60,14 +60,14 @@ public class ExitDoor : MonoBehaviour
             Zombie zombie = collision.gameObject.GetComponent<Zombie>();
             
 
-            if (zombie.exiting)
-            {
+            //if (zombie.exiting)
+            //{
                 
-                Vector3 u = A.transform.position;
-                zombies[0].transform.position = u;
-                zombies.Remove(zombies[0]);
-                timing = Time.time;
-            }
+            //    Vector3 u = A.transform.position;
+            //    zombies[0].transform.position = u;
+            //    zombies.Remove(zombies[0]);
+            //    timing = Time.time;
+            //}
         }
 
 

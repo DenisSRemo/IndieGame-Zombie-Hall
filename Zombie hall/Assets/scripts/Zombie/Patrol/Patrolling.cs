@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Patrolling :Sequence
 {
+
+    public Blackboard blackboard;
     public override void onInitialize()
     {
 
@@ -21,7 +23,18 @@ public class Patrolling :Sequence
         while (true)
         {
             Status s = currentChild.tick();
-           
+            if (currentChild == children[0] && s == Status.Success)
+            {
+                currentChild = children[1];
+            }
+            else
+                 if (currentChild == children[1] && s == Status.Success)
+            {
+                currentChild = children[0];
+            }
+
+            //if (blackboard.playerseen)
+            //    return Status.Success;
             return Status.Running;
 
         }

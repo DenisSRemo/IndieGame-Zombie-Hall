@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Investigate : Selector
 {
+    public Blackboard blackboard;
     public override void onInitialize()
     {
         base.onInitialize();
@@ -19,6 +20,10 @@ public class Investigate : Selector
         while (true)
         {
             Status s = currentChild.tick();
+
+
+            if (currentChild == children[0] && s == Status.Success)
+                return Status.Success;
             
             return Status.Running;
         }

@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Go_To_Noise : Behaviour
 {
+
+
+
+    public Zombie zombie;
+    public Blackboard blackboard;
     public override void onInitialize()
     {
 
@@ -16,8 +21,13 @@ public class Go_To_Noise : Behaviour
     {
         while (true)
         {
-           
 
+
+            zombie.transform.position = Vector3.MoveTowards(zombie.transform.position, blackboard.Noise_Location.position, blackboard.speed * Time.deltaTime);
+            if (Vector3.Distance(zombie.transform.position, blackboard.Nodes[blackboard.i].position) <= 1.0f)
+            {
+                return Status.Success;
+            }
             return Status.Running;
         }
 

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ZombieAI : BehaviourTree
 {
+    public Blackboard blackboard;
     public override void onInitialize()
     {
         base.onInitialize();
@@ -21,6 +22,14 @@ public class ZombieAI : BehaviourTree
 
         while (true)
         {
+            //if (blackboard.chase)
+            //    currentChild = children[0];
+            //else
+            //    if (blackboard.investigate)
+            //    currentChild = children[2];
+            //else
+            //    if (blackboard.patrol)
+            //    currentChild = children[1];
             Status s = currentChild.tick();
             
 
@@ -29,7 +38,7 @@ public class ZombieAI : BehaviourTree
         }
 
 
-        Debug.Log("bbcccccccccccccccccccccccccccccccccccccb");
+        
 
         return Status.Invalid;
         return base.update();

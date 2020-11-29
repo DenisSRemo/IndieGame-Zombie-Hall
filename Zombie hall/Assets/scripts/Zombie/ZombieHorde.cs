@@ -35,16 +35,16 @@ public class ZombieHorde : MonoBehaviour
         {
             if (player.transform.position.y - horde[i].transform.position.y <= 5)
             {
-                horde[i].target = player;
-                AttackTarget(player, horde[i]);
+                //horde[i].target = player;
+                //AttackTarget(player, horde[i]);
             }
 
 
             else
             {
 
-                horde[i].target = door;
-                AttackTarget(door, horde[i]);
+                //horde[i].target = door;
+                //AttackTarget(door, horde[i]);
             }
         }
         

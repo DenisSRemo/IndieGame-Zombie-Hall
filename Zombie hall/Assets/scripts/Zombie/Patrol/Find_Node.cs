@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Find_Node : Behaviour
 {
+
+    public Blackboard blackboard;
+
     public override void onInitialize()
     {
 
@@ -16,8 +19,13 @@ public class Find_Node : Behaviour
     {
         while (true)
         {
-           
-            return Status.Running;
+            if (blackboard.i == 0)
+                blackboard.i = 1;
+            else
+                if (blackboard.i == 1)
+                blackboard.i = 0;
+
+            return Status.Success;
         }
 
 
