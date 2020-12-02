@@ -18,7 +18,7 @@ public class Look_Around_Door : Behaviour
         {
            
 
-            return Status.Running;
+            return Status.Success;
         }
 
 

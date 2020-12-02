@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Visible : Behaviour
 {
+
+    public Blackboard blackboard;
     public override void onInitialize()
     {
 
@@ -16,7 +18,8 @@ public class Visible : Behaviour
     {
         while (true)
         {
-            
+            if (blackboard.playerseen)
+                return Status.Success;
 
             return Status.Running;
         }

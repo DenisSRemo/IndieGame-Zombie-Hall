@@ -20,7 +20,11 @@ public class Same_Room : Sequence
         {
             
             Status s = currentChild.tick();
-           
+            if (currentChild == children[0] && s == Status.Success)
+                currentChild = children[1];
+            else
+                if (currentChild == children[0] && s == Status.Success)
+                return Status.Success;
 
             return Status.Running;
         }
