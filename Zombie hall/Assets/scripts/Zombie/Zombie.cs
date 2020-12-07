@@ -8,17 +8,20 @@ public class Zombie : MonoBehaviour
     [SerializeField] private int health;
     [SerializeField] private Transform castPoint;
     [SerializeField] private float fovdistance;
+    [SerializeField] private float distance_to_zombie;
+    public bool through_door;
     public Blackboard blackboard;
     public LayerMask ActionMask;
     public LayerMask ZombieMask;
     public LayerMask ObstacleMask;
+    
     
     // Start is called before the first frame update
     void Start()
     {
        
         health = 100;
-        
+        through_door = false;
        
     }
 
@@ -34,7 +37,15 @@ public class Zombie : MonoBehaviour
             blackboard.playerseen = false;
         }
 
+        if(ToCloseZombie(distance_to_zombie))
+        {
+            blackboard.to_close = true;
 
+        }
+        else
+        {
+            blackboard.to_close = false;
+        }
     }
 
 
@@ -81,5 +92,42 @@ public class Zombie : MonoBehaviour
 
         //Debug.Log(val);
         return val;
+    }
+
+
+    private bool ToCloseZombie(float distance)
+    {
+        bool val=false;
+        float castDist = distance;
+
+        Vector2 endPos = castPoint.position + Vector3.right * castDist;
+
+        RaycastHit2D hit = Physics2D.Linecast(castPoint.position, endPos,ZombieMask);
+
+
+        if (hit.collider != null)
+        {
+            if (hit.collider.gameObject.CompareTag("Zombie"))
+            {
+                val = true;
+                Debug.DrawLine(castPoint.position, hit.point, Color.green);
+            }
+            else
+            {
+                val = false;
+
+                Debug.DrawLine(castPoint.position, endPos, Color.blue);
+            }
+
+        }
+        else
+        {
+            Debug.DrawLine(castPoint.position, endPos, Color.blue);
+        }
+
+
+        //Debug.Log(val);
+        return val;
+        
     }
 }

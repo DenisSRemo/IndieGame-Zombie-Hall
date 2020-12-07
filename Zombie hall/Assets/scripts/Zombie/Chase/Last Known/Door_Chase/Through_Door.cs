@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Through_Door : Behaviour
 {
+
+
+    public Zombie zombie;
     public override void onInitialize()
     {
 
@@ -16,7 +19,8 @@ public class Through_Door : Behaviour
     {
         while (true)
         {
-            
+            zombie.through_door = true;
+            return Status.Success;
             return Status.Running;
         }
 

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Go_Door : Behaviour
 {
+    public Zombie zombie;
+    public Blackboard blackboard;
     public override void onInitialize()
     {
 
@@ -16,7 +18,11 @@ public class Go_Door : Behaviour
     {
         while (true)
         {
-           
+            zombie.transform.position = Vector3.MoveTowards(zombie.transform.position,blackboard.target.transform.position, blackboard.speed * Time.deltaTime);
+            if (Vector3.Distance(zombie.transform.position, blackboard.target.transform.position) <= 0.5f)
+            {
+                return Status.Success;
+            }
 
             return Status.Running;
         }

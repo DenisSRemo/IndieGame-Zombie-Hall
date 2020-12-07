@@ -6,11 +6,13 @@ public class Last_Known_Location : Selector
 {
 
     public Zombie zombie;
+    public player Player;
     public Blackboard blackboard;
     public override void onInitialize()
     {
         base.onInitialize();
-       
+        if (children.Count != 0)
+            currentChild = children[0];
     }
 
     public override Status update()
@@ -18,11 +20,19 @@ public class Last_Known_Location : Selector
 
         while (true)
         {
-            zombie.transform.position = Vector3.MoveTowards(zombie.transform.position,blackboard.Last_known_position.position , blackboard.speed * Time.deltaTime);
-            if (Vector3.Distance(zombie.transform.position,blackboard.Last_known_position.position) <= 1f)
+            if(zombie.transform.position.y-Player.transform.position.y<=5)
             {
-                return Status.Success;
+                currentChild = children[0];
+
             }
+            else
+            {
+                currentChild = children[1];
+            }
+            Status s = currentChild.tick();
+
+            if (s == Status.Success)
+                return Status.Success;
 
             return Status.Running;
         }

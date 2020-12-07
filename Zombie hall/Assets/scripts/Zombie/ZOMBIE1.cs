@@ -25,6 +25,7 @@ public class ZOMBIE1 : MonoBehaviour
                          public Behaviour Go_To_Door;
                          public Behaviour Through_Door;
                          public Behaviour Look_Around_Door;
+                         public Behaviour Find_Door;
 
     public Blackboard blackboard;
 
@@ -44,7 +45,13 @@ public class ZOMBIE1 : MonoBehaviour
                  Chase.addchild(Stop_To_Keep_Distance);
                  Chase.addchild(Last_Known_Location);  
                        Last_Known_Location.addchild(Same_Room);
+                                           Same_Room.addchild(Go_Location);
+                                           Same_Room.addchild(Look_Around_Room);
                        Last_Known_Location.addchild(Door);
+                                           Door.addchild(Find_Door);
+                                           Door.addchild(Go_To_Door);
+                                           Door.addchild(Through_Door);
+                                           Door.addchild(Look_Around_Door);
 
     }
     private void Update()

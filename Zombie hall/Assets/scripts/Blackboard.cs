@@ -17,6 +17,7 @@ public class Blackboard : MonoBehaviour
     public bool chase;
     public bool playerseen;
     public int i;
+    public bool to_close;
 
 
     private void Start()
@@ -27,6 +28,7 @@ public class Blackboard : MonoBehaviour
         chase = false;
         playerseen=false;
         i = 0;
+        to_close = false;
         //Nodes.Add(zombie);
         //Nodes.Add(zombie);
         //Vector3 u = zombie.transform.position;

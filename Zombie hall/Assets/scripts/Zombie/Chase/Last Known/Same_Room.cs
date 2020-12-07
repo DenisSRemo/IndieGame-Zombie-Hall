@@ -23,7 +23,7 @@ public class Same_Room : Sequence
             if (currentChild == children[0] && s == Status.Success)
                 currentChild = children[1];
             else
-                if (currentChild == children[0] && s == Status.Success)
+                if (currentChild == children[1] && s == Status.Success)
                 return Status.Success;
 
             return Status.Running;
