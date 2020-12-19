@@ -31,7 +31,7 @@ public class ZombieAI : BehaviourTree
             //    if (blackboard.patrol)
             //    currentChild = children[1];
 
-            currentChild = children[3];
+            currentChild = children[2];
             Status s = currentChild.tick();
             
 

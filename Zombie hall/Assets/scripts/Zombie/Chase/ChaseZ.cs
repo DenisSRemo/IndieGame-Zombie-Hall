@@ -27,14 +27,16 @@ public class ChaseZ : Selector
             {
                 currentChild = children[0];
             }
-            else
-            {
-                return Status.Failure;
-            }
+           
             if (currentChild == children[0] && s == Status.Success)
                 currentChild = children[1];
             if (currentChild == children[1] && s == Status.Failure)
                 currentChild = children[3];
+            else
+             if (currentChild == children[1] && s == Status.Success)
+                return Status.Success;
+                if (currentChild == children[3] && s == Status.Success)
+                return Status.Success;
             if (blackboard.to_close)
                 currentChild = children[2];
             if (currentChild == children[2] && s == Status.Success)

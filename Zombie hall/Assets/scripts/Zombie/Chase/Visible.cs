@@ -20,6 +20,8 @@ public class Visible : Behaviour
         {
             if (blackboard.playerseen)
                 return Status.Success;
+            else 
+                return Status.Failure;
 
             return Status.Running;
         }

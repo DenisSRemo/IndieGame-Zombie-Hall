@@ -9,7 +9,7 @@ public class Blackboard : MonoBehaviour
     public Transform player;
     public Transform zombie;
     public List<Transform> Nodes;
-    public Transform Last_known_position;
+    public Vector3 Last_known_position;
     public Transform Noise_Location;
     public Transform target;
     public bool patrol;

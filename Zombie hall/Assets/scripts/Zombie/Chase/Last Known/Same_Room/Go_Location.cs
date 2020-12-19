@@ -19,8 +19,8 @@ public class Go_Location : Behaviour
     {
         while (true)
         {
-            zombie.transform.position = Vector3.MoveTowards(zombie.transform.position, blackboard.Last_known_position.position, blackboard.speed * Time.deltaTime);
-            if (Vector3.Distance(zombie.transform.position, blackboard.Last_known_position.position) <= 1.0f)
+            zombie.transform.position = Vector3.MoveTowards(zombie.transform.position, blackboard.Last_known_position, blackboard.speed * Time.deltaTime);
+            if (Vector3.Distance(zombie.transform.position, blackboard.Last_known_position) <= 1.0f)
             {
                 return Status.Success;
             }
