@@ -5,7 +5,7 @@ using UnityEngine;
 public class Zombie : MonoBehaviour
 {
 
-    [SerializeField] private int health;
+    [SerializeField] private float health;
     [SerializeField] private Transform castPoint;
     [SerializeField] private float fovdistance;
     [SerializeField] private float distance_to_zombie;
@@ -211,7 +211,7 @@ public class Zombie : MonoBehaviour
 
 
 
-   public void TakeHit(int damage)
+   public void TakeHit(float damage)
     {
         health = health - damage;
     }
