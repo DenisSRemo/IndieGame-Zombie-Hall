@@ -18,7 +18,7 @@ public class player : MonoBehaviour
 
     [SerializeField] private Animator animator;
 
-
+    [SerializeField] private GameObject GrenadePrehab;
 
 
 
@@ -29,8 +29,8 @@ public class player : MonoBehaviour
     [SerializeField] private Vector3 StartingPosition;
 
     private bool exitDoor;
-    
 
+    public Transform GranadePoint;
 
 
     void Start()
@@ -88,7 +88,10 @@ public class player : MonoBehaviour
 
             exitDoor = true;
 
-
+        if(Input.GetKeyDown(KeyCode.G))
+        {
+            Throw();
+        }
 
     }
 
@@ -142,7 +145,10 @@ public class player : MonoBehaviour
 
 
 
-
+    void Throw()
+    {
+        Instantiate(GrenadePrehab, GranadePoint.position, GranadePoint.rotation);
+    }
   
 
 
