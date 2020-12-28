@@ -20,7 +20,8 @@ public class Go_Location : Behaviour
         while (true)
         {
             zombie.transform.position = Vector3.MoveTowards(zombie.transform.position, blackboard.Last_known_position, blackboard.speed * Time.deltaTime);
-            if (Vector3.Distance(zombie.transform.position, blackboard.Last_known_position) <= 1.0f)
+            blackboard.target = blackboard.Last_known_position;
+            if (Vector3.Distance(zombie.transform.position, blackboard.Last_known_position) <= 0.5f)
             {
                 return Status.Success;
             }
@@ -28,7 +29,7 @@ public class Go_Location : Behaviour
             return Status.Running;
         }
 
-
+        
         return base.update();
     }
 

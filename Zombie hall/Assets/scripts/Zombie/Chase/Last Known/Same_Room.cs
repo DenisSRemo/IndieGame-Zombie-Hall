@@ -28,8 +28,13 @@ public class Same_Room : Sequence
 
             return Status.Running;
         }
+        
 
         base.update();
 
+    }
+    public override void onTerminate(Status status)
+    {
+        base.onTerminate(status);
     }
 }

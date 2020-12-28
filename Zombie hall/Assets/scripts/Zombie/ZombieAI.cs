@@ -22,20 +22,26 @@ public class ZombieAI : BehaviourTree
 
         while (true)
         {
-            //if (blackboard.chase)
-            //    currentChild = children[0];
-            //else
-            //    if (blackboard.investigate)
-            //    currentChild = children[2];
-            //else
-            //    if (blackboard.patrol)
-            //    currentChild = children[1];
-
-            currentChild = children[2];
             Status s = currentChild.tick();
-            
 
-         
+            if (blackboard.patrol)
+                currentChild = children[0];
+            if (blackboard.chase)
+
+                currentChild = children[2];
+
+
+
+            if (currentChild == children[2] && s == Status.Success)
+
+            {
+                blackboard.patrol = true;
+                blackboard.chase = false;
+
+
+            }
+
+
             return Status.Running;
         }
 

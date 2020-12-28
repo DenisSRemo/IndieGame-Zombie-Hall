@@ -20,16 +20,19 @@ public class Chasing : Behaviour
     {
         while (true)
         {
-            if(blackboard.playerseen)
+            blackboard.Last_known_position = player.transform.position;
+            if (blackboard.playerseen)
             {
                 zombie.transform.position = Vector3.MoveTowards(zombie.transform.position, player.transform.position, blackboard.speed * Time.deltaTime);
+                blackboard.target = player.transform.position;
             }
            
             else
             {
-                blackboard.Last_known_position = player.transform.position;
+                
                 return Status.Failure;
             }
+
             if (Vector3.Distance(zombie.transform.position, player.transform.position) <= 0.5f)
             {
                 return Status.Success;

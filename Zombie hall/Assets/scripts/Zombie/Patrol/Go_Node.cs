@@ -23,6 +23,7 @@ public class Go_Node : Behaviour
 
 
             zombie.transform.position = Vector3.MoveTowards(zombie.transform.position, blackboard.Nodes[blackboard.i].position, blackboard.speed * Time.deltaTime);
+            blackboard.target = blackboard.Nodes[blackboard.i].position;
             if (Vector3.Distance(zombie.transform.position, blackboard.Nodes[blackboard.i].position) <= 1.0f)
             {
                 return Status.Success;

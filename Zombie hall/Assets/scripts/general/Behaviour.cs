@@ -17,7 +17,7 @@ public class Behaviour : MonoBehaviour
     public Status currentStatus;
     public virtual void onInitialize()
     {
-
+       
     }
 
     public virtual Status update()
@@ -27,7 +27,7 @@ public class Behaviour : MonoBehaviour
 
     public virtual void onTerminate(Status status)
     {
-
+        
     }
 
 
@@ -38,12 +38,21 @@ public class Behaviour : MonoBehaviour
 
     public Status tick()
     {
+        //currentStatus = Status.Invalid;
         
         if (currentStatus == Status.Invalid)
             onInitialize();
         currentStatus = update();
+       
         if (currentStatus != Status.Running)
+        {
             onTerminate(currentStatus);
+            //if (currentStatus == Status.Success||currentStatus==Status.Failure)
+            //{
+            //    currentStatus = Status.Invalid;
+            //}
+        }
+
         return currentStatus;
     }
 }

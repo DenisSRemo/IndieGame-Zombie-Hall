@@ -54,8 +54,8 @@ public class ZOMBIE1 : MonoBehaviour
                                            Door.addchild(Look_Around_Door);
 
     }
-    private void Update()
+    void Update()
     {
-        Debug.Log(ZombieAI.tick());
+        ZombieAI.tick();
     }
 }

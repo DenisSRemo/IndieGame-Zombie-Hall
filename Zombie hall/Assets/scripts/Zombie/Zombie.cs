@@ -14,21 +14,31 @@ public class Zombie : MonoBehaviour
     public LayerMask ActionMask;
     public LayerMask ZombieMask;
     public LayerMask ObstacleMask;
-    
-    
+    public LayerMask DoorMask;
+    [SerializeField] private bool facingRight;
+    [SerializeField]private float r = -1;
+
+
     // Start is called before the first frame update
     void Start()
     {
-       
+        r = -1;
         health = 100;
         through_door = false;
-       
+        facingRight = true;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(CanSeePlayer(fovdistance))
+        if (transform.position.x <= blackboard.target.x)
+        {
+            r = -1;
+        }
+        else
+            r = 1;
+        if (CanSeePlayer(fovdistance,r))
         {
             blackboard.playerseen = true;
         }
@@ -37,7 +47,7 @@ public class Zombie : MonoBehaviour
             blackboard.playerseen = false;
         }
 
-        if(ToCloseZombie(distance_to_zombie))
+        if(ToCloseZombie(distance_to_zombie,r))
         {
             blackboard.to_close = true;
 
@@ -46,10 +56,29 @@ public class Zombie : MonoBehaviour
         {
             blackboard.to_close = false;
         }
+
+        if(CanSeeDoor(fovdistance,r))
+        {
+
+        }
+
+        Flip(r);
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Flip(float r)
+    {
+        if (r < 0 && !facingRight || r > 0 && facingRight)
+        {
+            facingRight = !facingRight;
+            Vector3 theScale = transform.localScale;
+            theScale.x *= -1;
+            transform.localScale = theScale;
+
+        }
+    }
+
+        private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Bullet")
             health = health - 20;
@@ -58,13 +87,17 @@ public class Zombie : MonoBehaviour
         
     }
 
-    private bool CanSeePlayer(float distance)
+    private bool CanSeePlayer(float distance,float r)
     {
 
 
         bool val = false;
         float castDist = distance;
-        Vector2 endPos = castPoint.position + Vector3.right * castDist;
+        Vector2 endPos;
+        if (r<0)
+        endPos = castPoint.position + Vector3.right * castDist;
+        else
+            endPos= castPoint.position + Vector3.left * castDist;
 
         RaycastHit2D hit = Physics2D.Linecast(castPoint.position, endPos,ActionMask);
         
@@ -95,39 +128,84 @@ public class Zombie : MonoBehaviour
     }
 
 
-    private bool ToCloseZombie(float distance)
+    private bool ToCloseZombie(float distance,float r)
     {
         bool val=false;
         float castDist = distance;
-
-        Vector2 endPos = castPoint.position + Vector3.right * castDist;
+        Vector2 endPos;
+        if (r < 0)
+            endPos = castPoint.position + Vector3.right * castDist;
+        else
+            endPos = castPoint.position + Vector3.left * castDist;
 
         RaycastHit2D hit = Physics2D.Linecast(castPoint.position, endPos,ZombieMask);
 
 
-        if (hit.collider != null)
-        {
-            if (hit.collider.gameObject.CompareTag("Zombie"))
-            {
-                val = true;
-                Debug.DrawLine(castPoint.position, hit.point, Color.green);
-            }
-            else
-            {
-                val = false;
+        //if (hit.collider != null)
+        //{
+        //    if (hit.collider.gameObject.CompareTag("Zombie"))
+        //    {
+        //        val = true;
+        //        Debug.DrawLine(castPoint.position, hit.point, Color.green);
+        //    }
+        //    else
+        //    {
+        //        val = false;
 
-                Debug.DrawLine(castPoint.position, endPos, Color.blue);
-            }
+        //        Debug.DrawLine(castPoint.position, endPos, Color.blue);
+        //    }
 
-        }
-        else
-        {
-            Debug.DrawLine(castPoint.position, endPos, Color.blue);
-        }
+        //}
+        //else
+        //{
+        //    Debug.DrawLine(castPoint.position, endPos, Color.blue);
+        //}
 
 
         //Debug.Log(val);
         return val;
         
+    }
+
+
+
+    private bool CanSeeDoor(float distance, float r)
+    {
+
+
+        bool val = false;
+        float castDist = distance;
+        Vector2 endPos;
+        if (r < 0)
+            endPos = castPoint.position + Vector3.right * castDist;
+        else
+            endPos = castPoint.position + Vector3.left * castDist;
+
+        RaycastHit2D hit = Physics2D.Linecast(castPoint.position, endPos, DoorMask);
+
+
+        //if (hit.collider != null)
+        //{
+        //    if (hit.collider.gameObject.CompareTag("Door"))
+        //    {
+        //        val = true;
+        //        Debug.DrawLine(castPoint.position, hit.point, Color.red);
+        //    }
+        //    else
+        //    {
+        //        val = false;
+
+        //        Debug.DrawLine(castPoint.position, endPos, Color.blue);
+        //    }
+
+        //}
+        //else
+        //{
+        //    Debug.DrawLine(castPoint.position, endPos, Color.blue);
+        //}
+
+
+        //Debug.Log(val);
+        return val;
     }
 }

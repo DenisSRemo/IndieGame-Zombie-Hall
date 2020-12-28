@@ -18,8 +18,8 @@ public class Go_Door : Behaviour
     {
         while (true)
         {
-            zombie.transform.position = Vector3.MoveTowards(zombie.transform.position,blackboard.target.transform.position, blackboard.speed * Time.deltaTime);
-            if (Vector3.Distance(zombie.transform.position, blackboard.target.transform.position) <= 0.5f)
+            zombie.transform.position = Vector3.MoveTowards(zombie.transform.position,blackboard.target, blackboard.speed * Time.deltaTime);
+            if (Vector3.Distance(zombie.transform.position, blackboard.target) <= 0.5f)
             {
                 return Status.Success;
             }

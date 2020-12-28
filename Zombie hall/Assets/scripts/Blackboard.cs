@@ -11,7 +11,7 @@ public class Blackboard : MonoBehaviour
     public List<Transform> Nodes;
     public Vector3 Last_known_position;
     public Transform Noise_Location;
-    public Transform target;
+    public Vector3 target;
     public bool patrol;
     public bool investigate;
     public bool chase;
@@ -37,6 +37,7 @@ public class Blackboard : MonoBehaviour
         //v.x = v.x + 10;
         //Nodes[0].transform.position = u;
         //Nodes[1].transform.position = v;
+
     }
 
 
@@ -44,6 +45,13 @@ public class Blackboard : MonoBehaviour
     {
         player = Player.transform;
         //zombie = gameObject.transform;
+
+        if(playerseen)
+        {
+            patrol = false;
+            chase = true;
+        }
+      
         
     }
 }

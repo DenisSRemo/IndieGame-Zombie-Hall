@@ -40,4 +40,8 @@ public class Last_Known_Location : Selector
         base.update();
 
     }
+    public override void onTerminate(Status status)
+    {
+        base.onTerminate(status);
+    }
 }

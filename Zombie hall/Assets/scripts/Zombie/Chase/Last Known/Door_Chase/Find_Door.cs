@@ -15,20 +15,21 @@ public class Find_Door : Behaviour
         base.onInitialize();
 
         doors = GameObject.FindGameObjectsWithTag("Door");
-        foreach(GameObject door in doors)
-        {
-            if(min>Vector3.Distance(zombie.transform.position,door.transform.position))
-            {
-                min = Vector3.Distance(zombie.transform.position, door.transform.position);
-            }
-        }
-        foreach (GameObject door in doors)
-        {
-            if (min == Vector3.Distance(zombie.transform.position, door.transform.position))
-            {
-                blackboard.target = door.transform;
-            }
-        }
+        //foreach(GameObject door in doors)
+        //{
+        //    if(min>Vector3.Distance(zombie.transform.position,door.transform.position))
+        //    {
+        //        min = Vector3.Distance(zombie.transform.position, door.transform.position);
+        //    }
+        //}
+        //foreach (GameObject door in doors)
+        //{
+        //    if (min == Vector3.Distance(zombie.transform.position, door.transform.position))
+        //    {
+        //        blackboard.target = door.transform.position;
+        //    }
+        //}
+        blackboard.target = doors[1].transform.position;
     }
 
     public override Status update()
