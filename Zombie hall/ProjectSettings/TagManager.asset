@@ -9,6 +9,7 @@ TagManager:
   - Zombie
   - Bullet
   - Door
+  - PickUpGrenade
   layers:
   - Default
   - TransparentFX

@@ -11,6 +11,7 @@ public class player : MonoBehaviour
     [SerializeField] private int maxh;
     [SerializeField] private int currenth;
     [SerializeField] private float startTime;
+    [SerializeField] private int numberGranades;
     private Rigidbody2D rb;
     private bool facingRight;
     private BoxCollider2D boxCollider2D;
@@ -18,8 +19,8 @@ public class player : MonoBehaviour
 
     [SerializeField] private Animator animator;
 
-    [SerializeField] private GameObject GrenadePrehab;
-
+    [SerializeField] private GameObject grenadePrehab;
+    [SerializeField] private GameObject granadeTrapPrehab;
 
 
     [SerializeField] private bool crouching = false;
@@ -44,6 +45,8 @@ public class player : MonoBehaviour
         right = true;
         StartingPosition = gameObject.transform.position;
         boxCollider2D = transform.GetComponent<BoxCollider2D>();
+
+        numberGranades = 0;
     }
 
     
@@ -90,9 +93,20 @@ public class player : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.G))
         {
-            Throw();
+            if(numberGranades!=0)
+            {
+                Throw();
+                numberGranades--;
+            }
+
         }
 
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            if(numberGranades!=0)
+            InstallGrenadeTrap();
+        }
     }
 
     float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
@@ -147,12 +161,23 @@ public class player : MonoBehaviour
 
     void Throw()
     {
-        Instantiate(GrenadePrehab, GranadePoint.position, GranadePoint.rotation);
+        Instantiate(grenadePrehab, GranadePoint.position, GranadePoint.rotation);
     }
   
 
+    void InstallGrenadeTrap()
+    {
+        Instantiate(granadeTrapPrehab, transform.position, transform.rotation);
+    }
 
-
-
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "PickUpGrenade")
+        {
+            numberGranades++;
+        }
+    }
 }
+
+
+
