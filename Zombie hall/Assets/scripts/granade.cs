@@ -22,7 +22,11 @@ public class granade : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
+        {
+            Debug.Log("PULL THE LEVEL KRUNK");
             Destroy(gameObject);
+        }
+            
     }
 
 
