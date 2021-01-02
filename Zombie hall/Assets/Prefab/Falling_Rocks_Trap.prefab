@@ -376,6 +376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Trap_door: {fileID: 2999689378175469671}
+  pulled: 0
 --- !u!1 &2999689378937037210
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,6 +492,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2999689378562461458}
     m_Modifications:
+    - target: {fileID: -6840552521741488872, guid: 41719905939c79b4abbcff7ece0f8376,
+        type: 3}
+      propertyPath: Lever
+      value: 
+      objectReference: {fileID: 2999689378660704875}
     - target: {fileID: 5546785111902523339, guid: 41719905939c79b4abbcff7ece0f8376,
         type: 3}
       propertyPath: m_Name
@@ -566,6 +572,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2999689378562461458}
     m_Modifications:
+    - target: {fileID: -6840552521741488872, guid: 41719905939c79b4abbcff7ece0f8376,
+        type: 3}
+      propertyPath: Lever
+      value: 
+      objectReference: {fileID: 2999689378660704875}
     - target: {fileID: 5546785111902523339, guid: 41719905939c79b4abbcff7ece0f8376,
         type: 3}
       propertyPath: m_Name
@@ -641,6 +652,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2999689378562461458}
     m_Modifications:
+    - target: {fileID: -6840552521741488872, guid: 41719905939c79b4abbcff7ece0f8376,
+        type: 3}
+      propertyPath: Lever
+      value: 
+      objectReference: {fileID: 2999689378660704875}
     - target: {fileID: 5546785111902523339, guid: 41719905939c79b4abbcff7ece0f8376,
         type: 3}
       propertyPath: m_Name
@@ -716,6 +732,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2999689378562461458}
     m_Modifications:
+    - target: {fileID: -6840552521741488872, guid: 41719905939c79b4abbcff7ece0f8376,
+        type: 3}
+      propertyPath: Lever
+      value: 
+      objectReference: {fileID: 2999689378660704875}
     - target: {fileID: 5546785111902523339, guid: 41719905939c79b4abbcff7ece0f8376,
         type: 3}
       propertyPath: m_Name

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class rocks : MonoBehaviour
 {
+
+    [SerializeField] private lever Lever;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +15,7 @@ public class rocks : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ( Input.GetKeyDown(KeyCode.E))
+        if ( Input.GetKeyDown(KeyCode.E)&&Lever.pulled==true)
         {
             Destroy(gameObject, 5);
         }

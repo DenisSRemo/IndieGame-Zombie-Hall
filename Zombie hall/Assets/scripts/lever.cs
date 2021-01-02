@@ -7,11 +7,11 @@ public class lever : MonoBehaviour
 
 
     [SerializeField] private GameObject Trap_door;
-
+    public bool pulled;
 
     void Start()
     {
-        
+        pulled = false;
     }
 
 
@@ -26,6 +26,7 @@ public class lever : MonoBehaviour
         if (collision.tag == "Player" && Input.GetKeyDown(KeyCode.E))
         {
             Destroy(Trap_door);
+            pulled = true;
         }
     }
 }
