@@ -23,7 +23,7 @@ public class granade : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("PULL THE LEVEL KRUNK");
+            
             Destroy(gameObject);
         }
             

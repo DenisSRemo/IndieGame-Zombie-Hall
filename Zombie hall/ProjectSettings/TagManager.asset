@@ -10,6 +10,8 @@ TagManager:
   - Bullet
   - Door
   - PickUpGrenade
+  - PickUpAmmo
+  - Objective
   layers:
   - Default
   - TransparentFX

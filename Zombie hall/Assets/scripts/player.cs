@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class player : MonoBehaviour
 {
 
-   [SerializeField] private LayerMask layer;
+    [SerializeField] private LayerMask layer;
     [SerializeField] private float speed;
     [SerializeField] private int maxh;
     [SerializeField] private int currenth;
@@ -24,15 +25,16 @@ public class player : MonoBehaviour
 
 
     [SerializeField] private bool crouching = false;
-     private bool move = false;
+    private bool move = false;
 
     [SerializeField] private bool right;
     [SerializeField] private Vector3 StartingPosition;
+    [SerializeField] private weapon Weapon;
 
     private bool exitDoor;
 
     public Transform GranadePoint;
-
+    [SerializeField] public bool objectivePicked;
 
     void Start()
     {
@@ -47,6 +49,9 @@ public class player : MonoBehaviour
         boxCollider2D = transform.GetComponent<BoxCollider2D>();
 
         numberGranades = 0;
+
+
+        objectivePicked = false;
     }
 
     
@@ -70,7 +75,7 @@ public class player : MonoBehaviour
         Vector3 u;
         u.x = transform.position.x;
         u.y = transform.position.y;
-        u.z = transform.position.z-10.0f;
+        u.z = transform.position.z-20.0f;
         camera.transform.position = u;
 
         //rotate towards mouse
@@ -175,6 +180,17 @@ public class player : MonoBehaviour
         if (collision.tag == "PickUpGrenade")
         {
             numberGranades++;
+        }
+
+
+        if (collision.tag == "PickUpAmmo")
+        {
+            Weapon.nrBulletsTotal = Weapon.nrBulletsTotal+30;
+        }
+
+        if (collision.tag == "Objective")
+        {
+            objectivePicked = true; ;
         }
     }
 }
