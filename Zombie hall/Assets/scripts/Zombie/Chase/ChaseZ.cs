@@ -52,7 +52,7 @@ public class ChaseZ : Selector
 
                 if (currentChild == children[3] && s == Status.Success)
             {
-               
+                currentChild= children[1];
                 return Status.Success;
             }
                 

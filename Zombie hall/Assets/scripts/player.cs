@@ -65,7 +65,7 @@ public class player : MonoBehaviour
          //jump
          if (Input.GetKeyDown(KeyCode.Space)&& IsGrounded())
          {
-             float JumpVelocity = 16f;
+             float JumpVelocity = 10f;
              rb.velocity=Vector2.up*JumpVelocity;
          }
 
