@@ -12,6 +12,7 @@ TagManager:
   - PickUpGrenade
   - PickUpAmmo
   - Objective
+  - Rock
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - Action
   - Zombie
   - Door
-  - 
+  - Rocks
   - 
   - 
   - 
