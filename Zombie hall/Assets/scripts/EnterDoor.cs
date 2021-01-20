@@ -7,9 +7,20 @@ public class EnterDoor : MonoBehaviour
     [SerializeField] private Transform B;
     
     [SerializeField] private player Player;
+
+    [SerializeField] private List<Collider2D> zombies;
+    public bool player_exited;
+    [SerializeField] private float timing;
+    public GameObject Location;
+
+
+    public bool exit;
+    public bool enter;
     void Start()
     {
-       
+        player_exited = false;
+
+        timing = Time.time;
     }
 
     // Update is called once per frame
@@ -23,6 +34,7 @@ public class EnterDoor : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        if(enter)
         if (collision.tag == "Player" && Input.GetKeyDown(KeyCode.S))
         {
 
@@ -35,6 +47,17 @@ public class EnterDoor : MonoBehaviour
 
 
         }
+
+
+        if(exit)
+            if (collision.tag == "Player" && Input.GetKeyDown(KeyCode.W))
+            {
+
+                Vector3 u = B.transform.position;
+
+                Player.transform.position = u;
+            }
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -48,22 +71,16 @@ public class EnterDoor : MonoBehaviour
         }
 
 
-
-        //if (collision.tag == "Zombie")
-        //{
-        //    Zombie zombie = collision.gameObject.GetComponent<Zombie>();
-
-
-        //    if (zombie.exiting)
-        //    {
-
-        //        Vector3 u = A.transform.position;
-        //        zombies[0].transform.position = u;
-        //        zombies.Remove(zombies[0]);
-        //        timing = Time.time;
-        //    }
-        //}
-
+        if (collision.tag == "Zombie")
+        {
+            var enemy = collision.GetComponent<Zombie>();
+            if(enemy.through_door)
+            {
+                Vector3 v = B.transform.position;
+                enemy.transform.position = v;
+                enemy.through_door = false;
+            }
+        }
 
 
     }

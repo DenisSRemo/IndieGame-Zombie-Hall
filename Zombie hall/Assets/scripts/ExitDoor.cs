@@ -7,10 +7,15 @@ public class ExitDoor : MonoBehaviour
     [SerializeField] private Transform A;
 
     [SerializeField] private player Player;
+    [SerializeField] private List<Collider2D> zombies;
+    public bool player_exited;
+    [SerializeField] private float timing;
     
     void Start()
     {
-       
+        player_exited = false;
+
+        timing = Time.time;
     }
 
     // Update is called once per frame
@@ -49,13 +54,34 @@ public class ExitDoor : MonoBehaviour
         }
 
 
-        
+
 
         if (collision.tag == "Zombie")
         {
-          
+            //zombies.Add(collision);
 
-          
+
+            //if (zombies.Count != 0 && Time.time - timing >= 0)
+            //{
+
+            //    Vector3 u = A.transform.position;
+            //    zombies[0].transform.position = u;
+            //    zombies.Remove(zombies[0]);
+            //    timing = Time.time;
+            //}
+
+
+
+            if (collision.tag == "Zombie")
+            {
+                var enemy = collision.GetComponent<Zombie>();
+                if (enemy.through_door)
+                {
+                    Vector3 v = A.transform.position;
+                    enemy.transform.position = v;
+                    enemy.through_door = false;
+                }
+            }
         }
 
 

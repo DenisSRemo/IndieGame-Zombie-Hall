@@ -20,7 +20,7 @@ public class Last_Known_Location : Selector
 
         while (true)
         {
-            if(zombie.transform.position.y-Player.transform.position.y<=5)
+            if(blackboard.playerseen)
             {
                 currentChild = children[0];
 

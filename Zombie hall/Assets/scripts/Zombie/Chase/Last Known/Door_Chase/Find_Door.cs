@@ -5,7 +5,7 @@ using UnityEngine;
 public class Find_Door : Behaviour
 {
     public GameObject[] doors;
-    public GameObject door;
+   // public GameObject door;
     private float min = 1000f;
     public Zombie zombie;
     public Blackboard blackboard;
@@ -13,7 +13,7 @@ public class Find_Door : Behaviour
     {
 
         base.onInitialize();
-
+        
         doors = GameObject.FindGameObjectsWithTag("Door");
         //foreach(GameObject door in doors)
         //{
@@ -29,7 +29,8 @@ public class Find_Door : Behaviour
         //        blackboard.target = door.transform.position;
         //    }
         //}
-        blackboard.target = doors[1].transform.position;
+       var D= doors[1].GetComponent<EnterDoor>();
+        blackboard.target = D.Location.transform.position;
     }
 
     public override Status update()
