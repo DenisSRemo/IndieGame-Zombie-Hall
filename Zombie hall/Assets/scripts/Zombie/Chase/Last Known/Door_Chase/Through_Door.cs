@@ -7,11 +7,12 @@ public class Through_Door : Behaviour
 
 
     public Zombie zombie;
+    private float timing;
     public override void onInitialize()
     {
 
         base.onInitialize();
-
+        timing = Time.time;
         
     }
 
@@ -19,7 +20,7 @@ public class Through_Door : Behaviour
     {
         while (true)
         {
-            zombie.through_door = true;
+            if(Time.time-timing>=5)
             return Status.Success;
             return Status.Running;
         }

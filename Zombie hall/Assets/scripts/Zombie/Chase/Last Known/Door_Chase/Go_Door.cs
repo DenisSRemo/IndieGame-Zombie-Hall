@@ -21,6 +21,7 @@ public class Go_Door : Behaviour
             zombie.transform.position = Vector3.MoveTowards(zombie.transform.position,blackboard.target, blackboard.speed * Time.deltaTime);
             if (Vector3.Distance(zombie.transform.position, blackboard.target) <= 1f)
             {
+                zombie.through_door = true;
                 return Status.Success;
             }
 
