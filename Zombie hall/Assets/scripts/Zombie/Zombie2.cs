@@ -21,6 +21,7 @@ public class Zombie2 : MonoBehaviour
         speed = 2f;
         health = 100;
         timing = Time.time;
+        exiting = false;
     }
 
     // Update is called once per frame
@@ -30,7 +31,11 @@ public class Zombie2 : MonoBehaviour
             target = player.transform;
 
         else
+        {
             target = door;
+            exiting = true;
+        }
+            
         transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
     }
 

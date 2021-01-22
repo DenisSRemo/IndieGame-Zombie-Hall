@@ -12,11 +12,11 @@ public class weapon : MonoBehaviour
     public float firerate = 0.1f;
     private float timetoshoot = 0f;
     public int nrbullets=0;
-    public int nrBulletsTotal = 120;
-   // public TextMeshProUGUI text_ammo; UI for showing the amount of bullets NU UITA DON'T FORGET
+    public int nrBulletsTotal = 60;
+    public TextMeshProUGUI text_ammo; 
     private void Start()
     {
-       // text_ammo.text = 0 + "/" + nrBulletsTotal;
+       text_ammo.text = 0 + "/" + nrBulletsTotal;
     }
 
     void Update()
@@ -30,7 +30,7 @@ public class weapon : MonoBehaviour
                 timetoshoot = Time.time;
                 nrbullets--;
             }
-          //  text_ammo.text = nrbullets + "/" + nrBulletsTotal;
+            text_ammo.text = nrbullets + "/" + nrBulletsTotal;
         }
         else
         {
@@ -54,7 +54,7 @@ public class weapon : MonoBehaviour
                 }
                   
             }
-           // text_ammo.text = nrbullets + "/" + nrBulletsTotal;
+            text_ammo.text = nrbullets + "/" + nrBulletsTotal;
         }
             
     }

@@ -24,6 +24,7 @@ public class spawn_zombie : MonoBehaviour
             {
                 zombies[i].SetActive(true);
             }
+           // Destroy(gameObject);
         }
         
     }

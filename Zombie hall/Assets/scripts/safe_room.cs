@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class safe_room : MonoBehaviour
 {
+
+    public GameObject Winner;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Winner.SetActive(false);
     }
 
     // Update is called once per frame
@@ -25,7 +27,7 @@ public class safe_room : MonoBehaviour
             var player = collision.GetComponent<player>();
             if(player.objectivePicked)
             {
-                Debug.Log("WINNER WINNER ZOMBIE KILLER");
+                Winner.SetActive(true);
             }
         }
 

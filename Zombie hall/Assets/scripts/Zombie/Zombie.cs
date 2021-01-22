@@ -17,6 +17,8 @@ public class Zombie : MonoBehaviour
     public LayerMask DoorMask;
     [SerializeField] private bool facingRight;
     [SerializeField]private float r = -1;
+    private float d1;
+    private float d2;
 
 
     // Start is called before the first frame update
@@ -26,12 +28,16 @@ public class Zombie : MonoBehaviour
         health = 100;
         through_door = false;
         facingRight = true;
+        d1 = fovdistance;
+        d2 = fovdistance * 2;
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+           
         if (transform.position.x <= blackboard.target.x)
         {
             r = -1;
@@ -41,10 +47,12 @@ public class Zombie : MonoBehaviour
         if (CanSeePlayer(fovdistance,r))
         {
             blackboard.playerseen = true;
+            fovdistance = d2;
         }
         else
         {
             blackboard.playerseen = false;
+            fovdistance = d1;
         }
 
         if(ToCloseZombie(distance_to_zombie,r))

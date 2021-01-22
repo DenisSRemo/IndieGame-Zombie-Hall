@@ -58,17 +58,40 @@ public class EnterDoor : MonoBehaviour
                 Player.transform.position = u;
             }
 
+
+        if (collision.tag == "Zombie")
+        {
+            var enemy = collision.GetComponent<Zombie>();
+            if (enemy.through_door)
+            {
+                Vector3 v = B.transform.position;
+                enemy.transform.position = v;
+                enemy.through_door = false;
+            }
+        }
+
+        if (collision.tag == "Zombie2")
+        {
+            var enemy = collision.GetComponent<Zombie2>();
+            if (enemy.exiting)
+            {
+                Vector3 v = B.transform.position;
+                enemy.transform.position = v;
+                enemy.exiting = false;
+            }
+        }
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
-            if (collision.tag == "Player" && Input.GetKeyDown(KeyCode.S))
-            {
+        //    if (collision.tag == "Player" && Input.GetKeyDown(KeyCode.S))
+        //    {
 
-            Vector3 u = B.transform.position;
+        //    Vector3 u = B.transform.position;
             
-            Player.transform.position = u;
-        }
+        //    Player.transform.position = u;
+        //}
 
 
         if (collision.tag == "Zombie")

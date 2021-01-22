@@ -13,6 +13,7 @@ TagManager:
   - PickUpAmmo
   - Objective
   - Rock
+  - Zombie2
   layers:
   - Default
   - TransparentFX
