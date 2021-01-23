@@ -10,7 +10,7 @@ public class Zombie2 : MonoBehaviour
     [SerializeField] public Transform target;
     public GameObject player;
     public float speed;
-    public int health;
+    public float health;
     public Transform door;
     [SerializeField] private List<Transform> positions;
     private float timing;
@@ -49,4 +49,11 @@ public class Zombie2 : MonoBehaviour
         if (collision.tag == "ExitDoor")
             exiting = true;
     }
+
+
+    public void TakeHit(float damage)
+    {
+        health = health - damage;
+    }
 }
+

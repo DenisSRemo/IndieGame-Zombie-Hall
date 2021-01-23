@@ -24,6 +24,10 @@ public class Instakill : MonoBehaviour
             var enemy = collision.GetComponent<Zombie>();
             enemy.TakeHit(100);
         }
-
+        if (collision.tag == "Zombie2")
+        {
+            var enemy = collision.GetComponent<Zombie2>();
+            enemy.TakeHit(100);
+        }
     }
 }

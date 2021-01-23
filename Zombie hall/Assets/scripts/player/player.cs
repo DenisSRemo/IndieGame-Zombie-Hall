@@ -39,6 +39,9 @@ public class player : MonoBehaviour
     public Transform GranadePoint;
     [SerializeField] public bool objectivePicked;
 
+
+    public TextMeshProUGUI number_grenades_text;
+
     void Start()
     {
         rb = transform.GetComponent<Rigidbody2D>();
@@ -58,6 +61,10 @@ public class player : MonoBehaviour
         objectivePicked = false;
 
         timing = Time.time;
+
+
+
+        number_grenades_text.text = "grenades:"+ numberGranades;
     }
 
     
@@ -118,6 +125,11 @@ public class player : MonoBehaviour
             if(numberGranades!=0)
             InstallGrenadeTrap();
         }
+
+
+
+
+        number_grenades_text.text = "grenades:" + numberGranades;
     }
 
     float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
