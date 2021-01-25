@@ -27,5 +27,7 @@ public class bullet : MonoBehaviour
     {
         if (collision.tag == "Zombie")
             Destroy(gameObject);
+        if (collision.tag == "Zombie2")
+            Destroy(gameObject);
     }
 }

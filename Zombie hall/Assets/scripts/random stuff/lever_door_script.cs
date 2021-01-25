@@ -8,7 +8,7 @@ public class lever_door_script : MonoBehaviour
     public Transform Position1;
     public Transform Position2;
     public GameObject door;
-
+    bool open = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,14 +26,16 @@ public class lever_door_script : MonoBehaviour
     {
         if (collision.tag == "Player" && Input.GetKeyDown(KeyCode.E))
         {
-            if(door.transform.position==Position1.transform.position)
+           
+            if(open)
             {
-                door.transform.position = Position2.transform.position;
+                door.SetActive(false);
+                open = false;
             }
             else
-                 if (door.transform.position == Position2.transform.position)
             {
-                door.transform.position = Position1.transform.position;
+                door.SetActive(true);
+                open = true;
             }
         }
     }
