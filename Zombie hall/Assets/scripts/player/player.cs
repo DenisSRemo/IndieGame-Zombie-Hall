@@ -41,7 +41,7 @@ public class player : MonoBehaviour
 
 
     public TextMeshProUGUI number_grenades_text;
-
+    public GameObject Object;
     void Start()
     {
         rb = transform.GetComponent<Rigidbody2D>();
@@ -62,7 +62,7 @@ public class player : MonoBehaviour
 
         timing = Time.time;
 
-
+        Object.SetActive(false);
 
         number_grenades_text.text = "grenades:"+ numberGranades;
     }
@@ -127,7 +127,12 @@ public class player : MonoBehaviour
         }
 
 
-
+        if(health<=0)
+        {
+            Object.SetActive(true);
+            Time.timeScale = 0;
+            Destroy(gameObject);
+        }
 
         number_grenades_text.text = "grenades:" + numberGranades;
     }
@@ -210,11 +215,20 @@ public class player : MonoBehaviour
         {
             objectivePicked = true; ;
         }
+        if (collision.tag == "InstaKill")
+        {
+            health = health - 100;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.tag == "Zombie")
+        {
+            health = health - 40;
+            timing = Time.time;
+        }
+        if (collision.collider.tag == "Zombie2")
         {
             health = health - 20;
             timing = Time.time;
@@ -227,10 +241,17 @@ public class player : MonoBehaviour
         if (collision.collider.tag == "Zombie")
         {
             if (Time.time - timing >= 1)
+                health = health - 40;
+            timing = Time.time;
+        }
+        if (collision.collider.tag == "Zombie2")
+        {
+            if (Time.time - timing >= 1)
                 health = health - 20;
             timing = Time.time;
         }
     }
+   
 }
 
 

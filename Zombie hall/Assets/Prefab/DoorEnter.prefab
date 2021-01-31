@@ -274,6 +274,8 @@ MonoBehaviour:
   player_exited: 0
   timing: 0
   Location: {fileID: 1019650526816323295}
+  Object: {fileID: 8775637354325127840}
+  Object2: {fileID: 7407267514658383688}
   exit: 0
   enter: 1
 --- !u!1 &4688371887297809214

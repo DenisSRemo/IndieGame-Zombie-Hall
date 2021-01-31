@@ -25,7 +25,7 @@ public class Zombie : MonoBehaviour
     void Start()
     {
         r = -1;
-        health = 100;
+        health = 300;
         through_door = false;
         facingRight = true;
         d1 = fovdistance;
