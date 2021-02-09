@@ -5,7 +5,7 @@ using UnityEngine;
 public class Zombie : MonoBehaviour
 {
 
-    [SerializeField] private float health;
+    [SerializeField] public float health;
     [SerializeField] private Transform castPoint;
     [SerializeField] private float fovdistance;
     [SerializeField] private float distance_to_zombie;

@@ -41,7 +41,7 @@ public class player : MonoBehaviour
 
 
     public TextMeshProUGUI number_grenades_text;
-    public GameObject Object;
+    public GameObject Loser ;
     void Start()
     {
         rb = transform.GetComponent<Rigidbody2D>();
@@ -62,7 +62,7 @@ public class player : MonoBehaviour
 
         timing = Time.time;
 
-        Object.SetActive(false);
+        Loser.SetActive(false);
 
         number_grenades_text.text = "grenades:"+ numberGranades;
     }
@@ -129,7 +129,7 @@ public class player : MonoBehaviour
 
         if(health<=0)
         {
-            Object.SetActive(true);
+            Loser.SetActive(true);
             Time.timeScale = 0;
             Destroy(gameObject);
         }
