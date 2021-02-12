@@ -29,7 +29,7 @@ public class ohnoscript : MonoBehaviour
         }
 
         
-            if (active == false&&bbbb)
+            if (active == false&&bbbb&&Time.time-time>5)
             {
                 tutorial_panel.SetActive(true);
                 active = true;
