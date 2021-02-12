@@ -8,7 +8,7 @@ public class ohnoscript : MonoBehaviour
     [SerializeField] private GameObject tutorial_panel;
     private bool active;
     private float time;
-    private lever aaaaa;
+  [SerializeField]  private lever aaaaa;
     private bool bbbb;
     // Start is called before the first frame update
     void Start()

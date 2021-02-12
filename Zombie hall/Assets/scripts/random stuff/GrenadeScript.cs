@@ -31,8 +31,9 @@ public class GrenadeScript : MonoBehaviour
     {
        if(Time.time-timeOfThrow>=timeToExplde)
         {
-            Destroy(gameObject);
             Explode();
+            Destroy(gameObject);
+           
         }
     }
 
@@ -50,7 +51,7 @@ public class GrenadeScript : MonoBehaviour
                     var closestPosition = hitCollider.ClosestPoint(transform.position);
                     var distance = Vector3.Distance(closestPosition, transform.position);
                     var damagePercent = Mathf.InverseLerp(BlastRadius, 0, distance);
-                    enemy.TakeHit(damagePercent * Damage);
+                    enemy.TakeHit(damagePercent * Damage*5);
                 }
             }
         }

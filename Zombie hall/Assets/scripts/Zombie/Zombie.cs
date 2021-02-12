@@ -69,7 +69,8 @@ public class Zombie : MonoBehaviour
         {
 
         }
-
+        if (health <= 0)
+            Destroy(gameObject);
         Flip(r);
     }
 
@@ -90,8 +91,7 @@ public class Zombie : MonoBehaviour
     {
         if (collision.tag == "Bullet")
             TakeHit(20);
-        if (health <= 0)
-            Destroy(gameObject);
+       
         
     }
 
