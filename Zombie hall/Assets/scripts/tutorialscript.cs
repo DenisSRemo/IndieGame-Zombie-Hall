@@ -14,17 +14,13 @@ public class tutorialscript : MonoBehaviour
     {
         active = false;
         tutorial_panel.SetActive(false);
-        time = Time.time;
+       // time = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (active && Time.time - time >= 10)
-        {
-            tutorial_panel.SetActive(false);
-            Time.timeScale = 1;
-        }
+       
             
     }
 
@@ -42,6 +38,13 @@ public class tutorialscript : MonoBehaviour
             }
         }
 
+    }
+
+    
+    public void functionforbutton()
+    {
+        tutorial_panel.SetActive(false);
+        Time.timeScale = 1;
     }
 
 }
