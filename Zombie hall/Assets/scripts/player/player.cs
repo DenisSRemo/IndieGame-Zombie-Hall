@@ -41,6 +41,7 @@ public class player : MonoBehaviour
 
 
     public TextMeshProUGUI number_grenades_text;
+    public TextMeshProUGUI health_text;
     public GameObject Loser ;
     void Start()
     {
@@ -57,6 +58,8 @@ public class player : MonoBehaviour
         numberGranades = 0;
 
         health = 100;
+
+        health_text.text = "health:" + health;
 
         objectivePicked = false;
 
@@ -134,6 +137,7 @@ public class player : MonoBehaviour
             Destroy(gameObject);
         }
 
+        health_text.text = "health:" + health;
         number_grenades_text.text = "grenades:" + numberGranades;
     }
 
