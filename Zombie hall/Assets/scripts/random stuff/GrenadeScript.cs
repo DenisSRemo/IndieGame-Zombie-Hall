@@ -11,8 +11,8 @@ public class GrenadeScript : MonoBehaviour
     public float timeToExplde=5;
     public float timeOfThrow;
     public Rigidbody2D rb;
-    public float Damage = 100;
-    public float BlastRadius=1;
+    public float Damage = 400;
+    public float BlastRadius=5;
 
 
 
@@ -50,8 +50,8 @@ public class GrenadeScript : MonoBehaviour
                 {
                     var closestPosition = hitCollider.ClosestPoint(transform.position);
                     var distance = Vector3.Distance(closestPosition, transform.position);
-                    var damagePercent = Mathf.InverseLerp(BlastRadius, 0, distance);
-                    enemy.TakeHit(damagePercent * Damage*5);
+                    var damagePercent = Mathf.InverseLerp(1/10,BlastRadius, distance);
+                    enemy.TakeHit(damagePercent * Damage*4);
                 }
             }
         }

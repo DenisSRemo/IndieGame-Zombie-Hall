@@ -6,9 +6,9 @@ public class ZombieHorde : MonoBehaviour
 {
 
 
-    [SerializeField] List<Zombie> horde;
-    [SerializeField] Transform door;
-    [SerializeField] Transform player;
+    [SerializeField] private List<Zombie> horde;
+    [SerializeField] private Transform door;
+    [SerializeField] private Transform player;
     private Transform target;
     private float speed;
 

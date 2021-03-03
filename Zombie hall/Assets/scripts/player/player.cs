@@ -86,11 +86,11 @@ public class player : MonoBehaviour
          pos= HandleMovement(pos);
 
          //jump
-         if (Input.GetKeyDown(KeyCode.Space)&& IsGrounded())
-         {
-             float JumpVelocity = 10f;
-             rb.velocity=Vector2.up*JumpVelocity;
-         }
+         //if (Input.GetKeyDown(KeyCode.Space)&& IsGrounded())
+         //{
+         //    float JumpVelocity = 10f;
+         //    rb.velocity=Vector2.up*JumpVelocity;
+         //}
 
         transform.position = pos;
 
@@ -137,7 +137,11 @@ public class player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.T))
         {
             if(numberGranades!=0)
-            InstallGrenadeTrap();
+            {
+                InstallGrenadeTrap();
+                numberGranades--;
+            }
+            
         }
 
 
