@@ -90,7 +90,7 @@ public class Zombie : MonoBehaviour
         private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Bullet")
-            TakeHit(20);
+            TakeHit(70);
        
         
     }

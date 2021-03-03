@@ -22,7 +22,7 @@ public class weapon : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetMouseButton(0)&&nrbullets>0&&nrBulletsTotal>=0)
+        if (Input.GetMouseButtonDown(0)&&nrbullets>0&&nrBulletsTotal>=0)
         {
             if(Time.time-timetoshoot>=firerate)
             {
@@ -36,9 +36,9 @@ public class weapon : MonoBehaviour
         {
             //before shooting you must press R to reload
             //the magazine has 30 bullets
-            if (Input.GetKeyDown(KeyCode.R)&&nrBulletsTotal>0&&nrbullets!=30)
+            if (Input.GetKeyDown(KeyCode.R)&&nrBulletsTotal>0&&nrbullets!=7)
             {
-                if (nrBulletsTotal < 30 && nrBulletsTotal > 0&& nrBulletsTotal + nrbullets<=30)
+                if (nrBulletsTotal < 7 && nrBulletsTotal > 0&& nrBulletsTotal + nrbullets<=7)
                 {
                     nrBulletsTotal = nrBulletsTotal + nrbullets;
                     nrbullets = nrBulletsTotal;
@@ -48,8 +48,8 @@ public class weapon : MonoBehaviour
                 else
                 {
                     nrBulletsTotal = nrBulletsTotal + nrbullets;
-                    nrBulletsTotal = nrBulletsTotal - 30;
-                    nrbullets = 30;
+                    nrBulletsTotal = nrBulletsTotal - 7;
+                    nrbullets = 7;
                     
                 }
                   
