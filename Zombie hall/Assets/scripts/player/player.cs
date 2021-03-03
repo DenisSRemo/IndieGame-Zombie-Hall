@@ -43,6 +43,10 @@ public class player : MonoBehaviour
     public TextMeshProUGUI number_grenades_text;
     public TextMeshProUGUI health_text;
     public GameObject Loser ;
+
+
+    public bool rotated;
+
     void Start()
     {
         rb = transform.GetComponent<Rigidbody2D>();
@@ -68,6 +72,9 @@ public class player : MonoBehaviour
         Loser.SetActive(false);
 
         number_grenades_text.text = "grenades:"+ numberGranades;
+
+        
+        
     }
 
     
@@ -100,12 +107,16 @@ public class player : MonoBehaviour
         Vector2 positionOnScreen = Camera.main.WorldToViewportPoint(transform.position);
         Vector2 mouseOnScreen = (Vector2)Camera.main.ScreenToViewportPoint(Input.mousePosition);
         float angle = AngleBetweenTwoPoints(positionOnScreen, mouseOnScreen);
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 180));
-        if (positionOnScreen.x >= mouseOnScreen.x)
+      //  transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 180));
+        if (positionOnScreen.x >= mouseOnScreen.x )
         {
-           transform.Rotate(180,0,0);
-          
+            transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
 
+           
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
         }
 
         if (Input.GetKeyDown(KeyCode.W))
