@@ -381,6 +381,7 @@ GameObject:
   - component: {fileID: 5799401072859979658}
   - component: {fileID: 5799401073779224438}
   - component: {fileID: 5799401072859979661}
+  - component: {fileID: 4760370156475229459}
   m_Layer: 0
   m_Name: zombie
   m_TagString: Zombie
@@ -397,7 +398,7 @@ Transform:
   m_GameObject: {fileID: 5799401072859979660}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 25.16, y: -9.31, z: 0.15302607}
-  m_LocalScale: {x: 6.742308, y: 12.313012, z: 6.8104124}
+  m_LocalScale: {x: 0.22, y: 0.22, z: 6.8104124}
   m_Children:
   - {fileID: 5799401073071572411}
   - {fileID: 5799401073778019165}
@@ -465,8 +466,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.060340744, g: 0.49056602, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: b5e8be87c46d5334bb8880b704bb0260, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -489,18 +490,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0022978298, y: -0.0015526414}
+  m_Offset: {x: 0.006873131, y: 0.2502041}
   m_SpriteTilingProperty:
-    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
+    border: {x: 5.48, y: 1.9401894, z: 7.5499997, w: 3.1803107}
+    pivot: {x: 0.51839596, y: 0.43745402}
+    oldSize: {x: 21, y: 15.001465}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.13322937, y: 0.1289474}
+  m_Size: {x: 2.6511626, y: 9.562374}
   m_EdgeRadius: 0
 --- !u!50 &5799401072859979658
 Rigidbody2D:
@@ -589,6 +590,25 @@ MonoBehaviour:
   Look_Around_Door: {fileID: 5799401074340581426}
   Find_Door: {fileID: 5799401072834514485}
   blackboard: {fileID: 5799401072496255762}
+--- !u!95 &4760370156475229459
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5799401072859979660}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0778811b159ac3248a860c754a6df5b8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5799401072861688885
 GameObject:
   m_ObjectHideFlags: 0
