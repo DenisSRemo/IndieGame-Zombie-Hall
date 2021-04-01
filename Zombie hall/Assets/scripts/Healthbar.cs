@@ -16,7 +16,7 @@ public class Healthbar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        localSc.x = zombie.health / 200;
+        localSc.x = zombie.health / 10;
         transform.localScale = localSc;
     }
 }
