@@ -47,4 +47,12 @@ public class tutorialscript : MonoBehaviour
         Time.timeScale = 1;
     }
 
+
+
+    public void functionforbutton2()
+    {
+        tutorial_panel.SetActive(false);
+        Time.timeScale = 0;
+    }
+
 }
