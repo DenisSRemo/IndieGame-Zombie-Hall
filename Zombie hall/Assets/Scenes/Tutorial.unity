@@ -16124,6 +16124,11 @@ PrefabInstance:
       propertyPath: nrBulletsTotal
       value: 70
       objectReference: {fileID: 0}
+    - target: {fileID: 8409086130985580560, guid: 0353c90699c2153468bb04b763617a9f,
+        type: 3}
+      propertyPath: pistol
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8409086130985580564, guid: 0353c90699c2153468bb04b763617a9f,
         type: 3}
       propertyPath: m_Layer
