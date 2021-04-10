@@ -11,7 +11,7 @@ public class Zombie2 : MonoBehaviour
     public GameObject player;
     public float speed;
     public float health;
-    public List<Transform> doors;
+    
     public Transform door;
     [SerializeField] private List<Transform> positions;
     private float timing;
@@ -33,12 +33,11 @@ public class Zombie2 : MonoBehaviour
 
         else
         {
-            target = doors[0];
-            exiting = true;
+            target = door;
+            
         }
 
-        if (target == doors[0] && Vector2.Distance(transform.position, target.position) <= 0.5)
-            doors.Remove(doors[0]);
+       
         transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
     }
 

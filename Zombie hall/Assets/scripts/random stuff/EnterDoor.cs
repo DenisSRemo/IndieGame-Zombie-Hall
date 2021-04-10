@@ -14,7 +14,7 @@ public class EnterDoor : MonoBehaviour
     public GameObject Location;
 
 
-    public GameObject Object, Object2;
+   
 
     public bool exit;
     public bool enter;
@@ -23,8 +23,7 @@ public class EnterDoor : MonoBehaviour
         player_exited = false;
 
         timing = Time.time;
-        //Object.SetActive(false);
-        //Object2.SetActive(false);
+       
     }
 
     // Update is called once per frame
@@ -33,21 +32,12 @@ public class EnterDoor : MonoBehaviour
         
     }
 
-    //private void OnTriggerExit2D(Collider2D collision)
-    //{
-    //    if (collision.tag == "Player")
-    //    {
-    //        Object.SetActive(false);
-    //        Object2.SetActive(false);
-    //    }
-    //}
+  
 
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        //if(enter)
-        //{
-        //    Object.SetActive(true);
+      
             if (collision.tag == "Player" && Input.GetKeyDown(KeyCode.S))
             {
 
@@ -65,17 +55,6 @@ public class EnterDoor : MonoBehaviour
       
 
 
-        //if(exit)
-        //{
-        //    Object2.SetActive(true);
-        //    if (collision.tag == "Player" && Input.GetKeyDown(KeyCode.W))
-        //    {
-
-        //        Vector3 u = B.transform.position;
-
-        //        Player.transform.position = u;
-        //    }
-        //}
         
 
 

@@ -31,7 +31,7 @@ public class weapon : MonoBehaviour
         if (pistol)
         {
 
-            firerate = 0.7f;
+            firerate = 0.3f;
             if (Input.GetMouseButtonDown(0) && nrbullets > 0 && nrBulletsTotal >= 0)
             {
                 if (Time.time - timetoshoot >= firerate)

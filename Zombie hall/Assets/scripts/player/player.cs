@@ -98,7 +98,7 @@ public class player : MonoBehaviour
         Vector3 u;
         u.x = transform.position.x;
         u.y = transform.position.y+1.0f;
-        u.z = transform.position.z-10.0f;
+        u.z = transform.position.z-20.0f;
         camera.transform.position = u;
 
         //rotate towards mouse
