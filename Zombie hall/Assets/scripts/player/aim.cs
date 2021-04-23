@@ -59,8 +59,13 @@ public class aim : MonoBehaviour
         Vector2 positionOnScreen = Camera.main.WorldToViewportPoint(transform.position);
         Vector2 mouseOnScreen = (Vector2)Camera.main.ScreenToViewportPoint(Input.mousePosition);
         float angle = AngleBetweenTwoPoints(positionOnScreen, mouseOnScreen);
-       //if(angle-180>=0)
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 180));
+
+        angle = angle - 180;
+
+        Debug.Log(angle);
+        if(angle>=-30||angle<=-150)
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        
         if (positionOnScreen.x >= mouseOnScreen.x)
         {
             transform.Rotate(0, 180, 180);
@@ -75,6 +80,7 @@ public class aim : MonoBehaviour
 
     }
 
+    
     float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
     {
         return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
