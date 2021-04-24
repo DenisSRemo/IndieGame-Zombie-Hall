@@ -31,12 +31,13 @@ public class weapon : MonoBehaviour
         if (pistol)
         {
 
-            firerate = 0.3f;
+            firerate = 0.2f;
             if (Input.GetMouseButtonDown(0) && nrbullets > 0 && nrBulletsTotal >= 0)
             {
                 if (Time.time - timetoshoot >= firerate)
                 {
                     Shoot();
+                    FindObjectOfType<AudioManager>().Play("pistol");
                     timetoshoot = Time.time;
                     nrbullets--;
                 }
@@ -121,7 +122,7 @@ public class weapon : MonoBehaviour
 
         if(AR)
         {
-            firerate = 0.3f;
+            firerate = 0.2f;
             if (Input.GetMouseButton(0) && nrbullets > 0 && nrBulletsTotal >= 0)
             {
                 if (Time.time - timetoshoot >= firerate)
