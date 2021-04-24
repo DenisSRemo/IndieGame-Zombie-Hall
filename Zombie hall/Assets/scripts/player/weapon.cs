@@ -36,8 +36,8 @@ public class weapon : MonoBehaviour
             {
                 if (Time.time - timetoshoot >= firerate)
                 {
-                    Shoot();
                     FindObjectOfType<AudioManager>().Play("pistol");
+                    Shoot();
                     timetoshoot = Time.time;
                     nrbullets--;
                 }
@@ -75,18 +75,21 @@ public class weapon : MonoBehaviour
             {
                 if (Time.time - timetoshoot >= firerate)
                 {
+                    FindObjectOfType<AudioManager>().Play("SMG");
                     Shoot();
                     timetoshoot = Time.time;
                     nrbullets--;
                 }
                 if (Time.time - timetoshoot >= firerate)
                 {
+                    FindObjectOfType<AudioManager>().Play("SMG");
                     Shoot();
                     timetoshoot = Time.time;
                     nrbullets--;
                 }
                 if (Time.time - timetoshoot >= firerate)
                 {
+                    FindObjectOfType<AudioManager>().Play("SMG");
                     Shoot();
                     timetoshoot = Time.time;
                     nrbullets--;
@@ -127,6 +130,7 @@ public class weapon : MonoBehaviour
             {
                 if (Time.time - timetoshoot >= firerate)
                 {
+                    FindObjectOfType<AudioManager>().Play("AR");
                     Shoot();
                     timetoshoot = Time.time;
                     nrbullets--;

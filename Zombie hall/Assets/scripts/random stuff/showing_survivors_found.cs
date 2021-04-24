@@ -5,7 +5,7 @@ using UnityEngine;
 public class showing_survivors_found : MonoBehaviour
 {
 
-     
+     [SerializeField]
     private bool S1, S2, S3, S4;
 
     public GameObject Survivor1, Survivor2, Survivor3, Survivor4;

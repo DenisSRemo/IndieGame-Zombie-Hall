@@ -3047,8 +3047,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: pistol
     clip: {fileID: 8300000, guid: 0eb36833299fa0545b8cff9a2c86092d, type: 3}
-    volume: 0
-    pitch: 0
+    volume: 0.5
+    pitch: 0.5
     source: {fileID: 0}
   - name: SMG
     clip: {fileID: 8300000, guid: 6c5ab6516cfa83f43976e0cb7d829ea4, type: 3}
