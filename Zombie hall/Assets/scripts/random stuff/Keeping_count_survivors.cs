@@ -10,10 +10,10 @@ public class Keeping_count_survivors : MonoBehaviour
    
     void Start()
     {
-        survivor1 = true;
-        survivor2 = true;
-        survivor3 = true;
-        survivor4 = true;
+        survivor1 = false;
+        survivor2 = false;
+        survivor3 = false;
+        survivor4 = false;
     }
 
    

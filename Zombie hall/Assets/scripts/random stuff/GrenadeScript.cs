@@ -8,7 +8,7 @@ public class GrenadeScript : MonoBehaviour
 
     public float Speed;
 
-    public float timeToExplde=5;
+    public float timeToExplde=3;
     public float timeOfThrow;
     public Rigidbody2D rb;
     public float Damage = 400;

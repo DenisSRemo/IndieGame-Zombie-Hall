@@ -127,6 +127,7 @@ public class player : MonoBehaviour
         {
             if(numberGranades!=0)
             {
+                FindObjectOfType<AudioManager>().Play("grenade");
                 Throw();
                 numberGranades--;
             }

@@ -48,7 +48,7 @@ public class grenade_trap_script : MonoBehaviour
     {
         if (collision.tag == "Zombie")
         {
-          
+            FindObjectOfType<AudioManager>().Play("grenade");
             Explode();
             Destroy(gameObject);
         }
