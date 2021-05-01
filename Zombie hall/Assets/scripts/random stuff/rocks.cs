@@ -30,7 +30,7 @@ public class rocks : MonoBehaviour
         if (collision.collider.tag == "Zombie")
         {
             var enemy = collision.collider.GetComponent<Zombie>();
-            enemy.TakeHit(100);
+            enemy.TakeHit(150);
         }
     }
 }

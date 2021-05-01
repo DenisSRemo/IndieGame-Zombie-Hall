@@ -124,3 +124,38 @@ MonoBehaviour:
     volume: 0.5
     pitch: 0.5
     source: {fileID: 0}
+  - name: denis ant interaction
+    clip: {fileID: 8300000, guid: 45df088ac7300d240a342f56fe9e0013, type: 3}
+    volume: 0.5
+    pitch: 0.5
+    source: {fileID: 0}
+  - name: denis char interaction
+    clip: {fileID: 8300000, guid: 71aa39cbd1d21e445adf3dab21942935, type: 3}
+    volume: 0.5
+    pitch: 0.5
+    source: {fileID: 0}
+  - name: denis jamal interaction
+    clip: {fileID: 8300000, guid: 0bbfeef9a521a1f41b296b4ca6f0c226, type: 3}
+    volume: 0.5
+    pitch: 0.5
+    source: {fileID: 0}
+  - name: intro level 1
+    clip: {fileID: 8300000, guid: 60367383464fa8b46b062ad8732f843e, type: 3}
+    volume: 0.5
+    pitch: 0.5
+    source: {fileID: 0}
+  - name: intro level 2
+    clip: {fileID: 8300000, guid: c597dea5baf6a9041b15ad9f5f1d5fd4, type: 3}
+    volume: 0.5
+    pitch: 0.5
+    source: {fileID: 0}
+  - name: intro level 3
+    clip: {fileID: 8300000, guid: 7dc27b6a8a9858e4baa7be0a6769d891, type: 3}
+    volume: 0.5
+    pitch: 0.5
+    source: {fileID: 0}
+  - name: denis will interaction
+    clip: {fileID: 8300000, guid: c3b1707b23dc5084d89c97ff225879c9, type: 3}
+    volume: 0.5
+    pitch: 0.5
+    source: {fileID: 0}

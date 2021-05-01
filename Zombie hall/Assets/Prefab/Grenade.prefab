@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 10
-  timeToExplde: 5
+  timeToExplde: 3
   timeOfThrow: 0
   rb: {fileID: 1934053806115042930}
   Damage: 100

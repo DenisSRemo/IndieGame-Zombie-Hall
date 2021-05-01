@@ -4767,6 +4767,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 0}
   panel2: {fileID: 0}
+  panel3: {fileID: 0}
+  voiceline: 
+  number_survivor: 0
 --- !u!1 &1341785110
 GameObject:
   m_ObjectHideFlags: 0
