@@ -16,7 +16,7 @@ public class Zombie : MonoBehaviour
     public LayerMask ObstacleMask;
     public LayerMask DoorMask;
     [SerializeField] private bool facingRight;
-    [SerializeField]private float r = -1;
+    [SerializeField]public float r = -1;
     private float d1;
     private float d2;
 
@@ -115,6 +115,7 @@ public class Zombie : MonoBehaviour
             if (hit.collider.gameObject.CompareTag("Player")) 
             {
                 val = true;
+                Debug.Log(val);
                 Debug.DrawLine(castPoint.position, hit.point, Color.red);
             }
             else

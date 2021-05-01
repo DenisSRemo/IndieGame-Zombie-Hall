@@ -151,6 +151,7 @@ public class player : MonoBehaviour
             Loser.SetActive(true);
             Time.timeScale = 0;
             Destroy(gameObject);
+            Destroy(health_text);
         }
 
         health_text.text = "health:" + health;

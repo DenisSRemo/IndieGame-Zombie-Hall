@@ -77,8 +77,10 @@ public class EnterDoor : MonoBehaviour
             {
                 Vector3 v = B.transform.position;
                 enemy.transform.position = v;
-                enemy.exiting = false;
+                 enemy.exiting = false;
+                enemy.doors.RemoveAt(0);
             }
+
         }
 
     }

@@ -28,6 +28,7 @@ public class safe_room : MonoBehaviour
             if(player.objectivePicked)
             {
                 Winner.SetActive(true);
+                Time.timeScale = 0;
             }
         }
 

@@ -62,7 +62,7 @@ public class aim : MonoBehaviour
 
         angle = angle - 180;
 
-        Debug.Log(angle);
+       // Debug.Log(angle);
         if(angle>=-30||angle<=-150)
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
         

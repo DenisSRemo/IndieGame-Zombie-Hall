@@ -16,5 +16,13 @@ public class Keeping_count_survivors : MonoBehaviour
         survivor4 = false;
     }
 
-   
+    void Update()
+    {
+        Debug.Log("survivor1" + survivor1);
+        Debug.Log("survivor2" + survivor2);
+        Debug.Log("survivor3" + survivor3);
+        Debug.Log("survivor4" + survivor4);
+
+    }
+
 }

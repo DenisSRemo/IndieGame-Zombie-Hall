@@ -20,7 +20,7 @@ public class Through_Door : Behaviour
     {
         while (true)
         {
-            if(Time.time-timing>=5)
+           
             return Status.Success;
             return Status.Running;
         }

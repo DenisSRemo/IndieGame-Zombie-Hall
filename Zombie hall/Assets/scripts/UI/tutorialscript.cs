@@ -9,6 +9,7 @@ public class tutorialscript : MonoBehaviour
     [SerializeField] private GameObject tutorial_panel;
     private bool active;
     private float time;
+    [SerializeField] private string intro_line;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +36,7 @@ public class tutorialscript : MonoBehaviour
                 active = true;
                 time = Time.time;
                 Time.timeScale = 0;
+                FindObjectOfType<AudioManager>().Play(intro_line);
             }
         }
 

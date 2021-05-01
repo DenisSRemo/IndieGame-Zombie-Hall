@@ -12,7 +12,7 @@ public class Zombie2 : MonoBehaviour
     public float speed;
     public float health;
     
-    public Transform door;
+    public List<Transform> doors;
     [SerializeField] private List<Transform> positions;
     private float timing;
     public bool exiting;
@@ -28,12 +28,19 @@ public class Zombie2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.transform.position.y - gameObject.transform.position.y <= 5)
-            target = player.transform;
+        Debug.Log(player.transform.position.y - gameObject.transform.position.y);
+        if (Mathf.Abs( player.transform.position.y - gameObject.transform.position.y) >= 5)
+        {
+            target = doors[0];
+            
+                exiting = true;
+
+        }
 
         else
         {
-            target = door;
+            
+                    target = player.transform;
             
         }
 
@@ -45,11 +52,20 @@ public class Zombie2 : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Bullet")
+        {
+           if( FindObjectOfType<weapon>().pistol)
             health = health - 60;
+           else
+                 if (FindObjectOfType<weapon>().SMG)
+                health = health - 20;
+           else
+                 if (FindObjectOfType<weapon>().AR)
+                health = health - 40;
+        }
+            
         if (health <= 0)
             Destroy(gameObject);
-        if (collision.tag == "ExitDoor")
-            exiting = true;
+       
     }
 
 
