@@ -79,16 +79,12 @@ public class weapon : MonoBehaviour
                     Shoot();
                     timetoshoot = Time.time;
                     nrbullets--;
-                }
-                if (Time.time - timetoshoot >= firerate)
-                {
+                
                     FindObjectOfType<AudioManager>().Play("SMG");
                     Shoot();
                     timetoshoot = Time.time;
                     nrbullets--;
-                }
-                if (Time.time - timetoshoot >= firerate)
-                {
+                
                     FindObjectOfType<AudioManager>().Play("SMG");
                     Shoot();
                     timetoshoot = Time.time;
@@ -100,9 +96,9 @@ public class weapon : MonoBehaviour
             {
                 //before shooting you must press R to reload
                 //the magazine has 30 bullets
-                if (Input.GetKeyDown(KeyCode.R) && nrBulletsTotal > 0 && nrbullets != 40)
+                if (Input.GetKeyDown(KeyCode.R) && nrBulletsTotal > 0 && nrbullets != 30)
                 {
-                    if (nrBulletsTotal < 40 && nrBulletsTotal > 0 && nrBulletsTotal + nrbullets <= 40)
+                    if (nrBulletsTotal < 30 && nrBulletsTotal > 0 && nrBulletsTotal + nrbullets <= 30)
                     {
                         nrBulletsTotal = nrBulletsTotal + nrbullets;
                         nrbullets = nrBulletsTotal;
@@ -112,8 +108,8 @@ public class weapon : MonoBehaviour
                     else
                     {
                         nrBulletsTotal = nrBulletsTotal + nrbullets;
-                        nrBulletsTotal = nrBulletsTotal - 40;
-                        nrbullets = 40;
+                        nrBulletsTotal = nrBulletsTotal - 30;
+                        nrbullets = 30;
 
                     }
 

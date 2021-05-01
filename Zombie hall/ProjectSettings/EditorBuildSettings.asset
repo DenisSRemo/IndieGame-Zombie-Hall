@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 51fabe8c8dcceae42991b954e0d2d5c7
   - enabled: 1
+    path: Assets/Scenes/Choose weapon.unity
+    guid: 70accf35e2a7a5d4eb42dad142bdf1c3
+  - enabled: 1
     path: Assets/Scenes/Pistol levels/Tutorial.unity
     guid: a97b55d2a95e8a84e8908b8d5bfb87f0
   - enabled: 1
@@ -20,4 +23,31 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Pistol levels/Level 3.unity
     guid: 29f952f3d533f9b49a727b3239f2a41b
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: a0e2c249e0237964ca12228e512ea71c
+  - enabled: 1
+    path: Assets/Scenes/SMG levels/Tutorial.unity
+    guid: 36614e0f9ab5bc649b749a298f5273b2
+  - enabled: 1
+    path: Assets/Scenes/SMG levels/Level 1.unity
+    guid: 718b32280d59ff647be252555175d5b9
+  - enabled: 1
+    path: Assets/Scenes/SMG levels/Level 2.unity
+    guid: d83749cab41d1b54fa9958e7864edf11
+  - enabled: 1
+    path: Assets/Scenes/SMG levels/Level 3.unity
+    guid: 2e89256565ab66a4888ccb9072746ee6
+  - enabled: 1
+    path: Assets/Scenes/AR levels/Tutorial.unity
+    guid: 5126234d6ee2c2249b196956686d285f
+  - enabled: 1
+    path: Assets/Scenes/AR levels/Level 1.unity
+    guid: f5e9d46933d5e8c44868e7aca300dc60
+  - enabled: 1
+    path: Assets/Scenes/AR levels/Level 2.unity
+    guid: 300f2f84ea6087544b65d14c3ecba8a9
+  - enabled: 1
+    path: Assets/Scenes/AR levels/Level 3.unity
+    guid: 248cb5c0fdd24134d97a4b5062d23356
   m_configObjects: {}

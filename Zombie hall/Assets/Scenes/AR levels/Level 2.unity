@@ -5304,6 +5304,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8409086129621635414, guid: 0353c90699c2153468bb04b763617a9f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 8409086129621635414, guid: 0353c90699c2153468bb04b763617a9f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8409086130588480106, guid: 0353c90699c2153468bb04b763617a9f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 8409086130588480106, guid: 0353c90699c2153468bb04b763617a9f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.41
+      objectReference: {fileID: 0}
     - target: {fileID: 8409086130901422852, guid: 0353c90699c2153468bb04b763617a9f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5402,17 +5422,43 @@ PrefabInstance:
     - target: {fileID: 8409086130985580560, guid: 0353c90699c2153468bb04b763617a9f,
         type: 3}
       propertyPath: nrbullets
-      value: 7
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8409086130985580560, guid: 0353c90699c2153468bb04b763617a9f,
         type: 3}
       propertyPath: nrBulletsTotal
-      value: 70
+      value: 220
       objectReference: {fileID: 0}
     - target: {fileID: 8409086130985580560, guid: 0353c90699c2153468bb04b763617a9f,
         type: 3}
       propertyPath: pistol
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8409086130985580560, guid: 0353c90699c2153468bb04b763617a9f,
+        type: 3}
+      propertyPath: SMG
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8409086130985580560, guid: 0353c90699c2153468bb04b763617a9f,
+        type: 3}
+      propertyPath: AR
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8409086130985580561, guid: 0353c90699c2153468bb04b763617a9f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 97b3654409e1ea9468219f70cbf98db0,
+        type: 3}
+    - target: {fileID: 8409086130985580567, guid: 0353c90699c2153468bb04b763617a9f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8409086130985580567, guid: 0353c90699c2153468bb04b763617a9f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0353c90699c2153468bb04b763617a9f, type: 3}
@@ -8207,7 +8253,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 14
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -17086,7 +17132,7 @@ PrefabInstance:
     - target: {fileID: 2533943908105140315, guid: ff6b3ae60cab56b4286c3ffa5cfdf4eb,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 4
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2533943908119083152, guid: ff6b3ae60cab56b4286c3ffa5cfdf4eb,
         type: 3}
@@ -17236,7 +17282,7 @@ PrefabInstance:
     - target: {fileID: 2533943908875277672, guid: ff6b3ae60cab56b4286c3ffa5cfdf4eb,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 4
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2533943909031688684, guid: ff6b3ae60cab56b4286c3ffa5cfdf4eb,
         type: 3}
@@ -17331,7 +17377,7 @@ PrefabInstance:
     - target: {fileID: 2533943909479248202, guid: ff6b3ae60cab56b4286c3ffa5cfdf4eb,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 4
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2533943909784811972, guid: ff6b3ae60cab56b4286c3ffa5cfdf4eb,
         type: 3}
