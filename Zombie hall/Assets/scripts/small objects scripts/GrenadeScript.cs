@@ -45,16 +45,33 @@ public class GrenadeScript : MonoBehaviour
             Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, BlastRadius);
             foreach (Collider2D hitCollider in hitColliders)
             {
-                var enemy = hitCollider.GetComponent<Zombie>();
-                if (enemy)
+                if(hitCollider.tag=="Zombie")
                 {
-                    var closestPosition = hitCollider.ClosestPoint(transform.position);
-                    var distance = Vector3.Distance(closestPosition, transform.position);
-                    var damagePercent = Mathf.InverseLerp(1/10,BlastRadius, distance);
-                    enemy.TakeHit(damagePercent * Damage*4);
+                    var enemy = hitCollider.GetComponent<Zombie>();
+                    if (enemy)
+                    {
+                        var closestPosition = hitCollider.ClosestPoint(transform.position);
+                        var distance = Vector3.Distance(closestPosition, transform.position);
+                        var damagePercent = Mathf.InverseLerp(1 / 10, BlastRadius, distance);
+                        enemy.TakeHit(damagePercent * Damage * 4);
+                    }
                 }
+                else
+                    if(hitCollider.tag=="Zombie2")
+                {
+                    var enemy = hitCollider.GetComponent<Zombie2>();
+                    if (enemy)
+                    {
+                        var closestPosition = hitCollider.ClosestPoint(transform.position);
+                        var distance = Vector3.Distance(closestPosition, transform.position);
+                        var damagePercent = Mathf.InverseLerp(1 / 10, BlastRadius, distance);
+                        enemy.TakeHit(damagePercent * Damage * 4);
+                    }
+                }
+               
             }
         }
+       
     }
 
 

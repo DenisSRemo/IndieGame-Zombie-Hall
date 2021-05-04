@@ -28,6 +28,7 @@ public class manager : MonoBehaviour
             index = true;
             Object.SetActive(index);
             Time.timeScale = 0;
+            FindObjectOfType<weapon>().Fire(false);
 
         }
         else
@@ -36,6 +37,7 @@ public class manager : MonoBehaviour
             index = false;
             Object.SetActive(index);
             Time.timeScale = 1;
+            FindObjectOfType<weapon>().Fire(true);
         }
     }
 
@@ -43,6 +45,7 @@ public class manager : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(index);
+        FindObjectOfType<weapon>().Fire(true);
 
     }
 

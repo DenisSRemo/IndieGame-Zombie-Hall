@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2680145698560271340}
   - component: {fileID: 2680145698560271343}
   - component: {fileID: 3519262226115026220}
+  - component: {fileID: 6470668515268582858}
   m_Layer: 12
   m_Name: zombie (1)
   m_TagString: Zombie
@@ -150,7 +151,7 @@ MonoBehaviour:
   player: {fileID: 0}
   speed: 0
   health: 0
-  door: {fileID: 0}
+  doors: []
   positions: []
   exiting: 0
 --- !u!114 &2680145698560271343
@@ -204,6 +205,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &6470668515268582858
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2680145698560271342}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -2.13916, y: 3.2087827}
+  m_SpriteTilingProperty:
+    border: {x: 5.48, y: 1.9401894, z: 7.5, w: 3.1503077}
+    pivot: {x: 0.51796657, y: 0.42672795}
+    oldSize: {x: 21, y: 15.001465}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6.348738, y: 0.95296764}
+  m_EdgeRadius: 0
 --- !u!1 &3674878696950845336
 GameObject:
   m_ObjectHideFlags: 0

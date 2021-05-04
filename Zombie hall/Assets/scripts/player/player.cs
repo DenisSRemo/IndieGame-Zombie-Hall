@@ -232,7 +232,7 @@ public class player : MonoBehaviour
 
         if (collision.tag == "PickUpAmmo")
         {
-            Weapon.nrBulletsTotal = Weapon.nrBulletsTotal+35;
+            Weapon.nrBulletsTotal = Weapon.nrBulletsTotal+100;
         }
 
         if (collision.tag == "Objective")

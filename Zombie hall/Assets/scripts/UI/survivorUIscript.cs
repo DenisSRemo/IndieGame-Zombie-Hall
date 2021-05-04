@@ -56,6 +56,7 @@ public class survivorUIscript : MonoBehaviour
                 active = true;
                 time = Time.time;
                 Time.timeScale = 0;
+                FindObjectOfType<weapon>().Fire(false);
                 FindObjectOfType<AudioManager>().Play(voiceline);
                 if (number_survivor == 1)
                     s1 = true;
@@ -75,7 +76,11 @@ public class survivorUIscript : MonoBehaviour
     public void NextPanel(GameObject panel)
     {
         panel.SetActive(false);
-        
+        Time.timeScale = 0;
+      FindObjectOfType<weapon>().Fire(false);
+       
+
+
     }
 
 
@@ -83,6 +88,8 @@ public class survivorUIscript : MonoBehaviour
     public void LastPanel(GameObject panel)
     {
         panel.SetActive(false);
+        FindObjectOfType<weapon>().Fire(true);
+
         Time.timeScale =1;
     }
     public void Voiceline(string s)

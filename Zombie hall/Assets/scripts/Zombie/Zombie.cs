@@ -94,7 +94,7 @@ public class Zombie : MonoBehaviour
                 health = health - 60;
             else
                 if (FindObjectOfType<weapon>().SMG)
-                health = health - 20;
+                health = health - 25;
             else
                 if (FindObjectOfType<weapon>().AR)
                 health = health - 40;

@@ -34,7 +34,8 @@ public class ohnoscript : MonoBehaviour
             if (active == false&& isItTrue && Time.time-time>5)
             {
                 tutorial_panel.SetActive(true);
-                active = true;
+            FindObjectOfType<weapon>().Fire(false);
+            active = true;
                 time = Time.time;
                 Time.timeScale = 0;
             }
@@ -49,6 +50,7 @@ public class ohnoscript : MonoBehaviour
     public void functionforbutton()
     {
         tutorial_panel.SetActive(false);
+        FindObjectOfType<weapon>().Fire(true);
         Time.timeScale = 1;
     }
 

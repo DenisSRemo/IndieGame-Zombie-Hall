@@ -22,6 +22,6 @@ public class PlusOneBullet : MonoBehaviour
     //It makes the character fire every time the player presses a button to clise the UI
     public void PlusOneBulletFunction(weapon weapon)
     {
-        weapon.nrBulletsTotal++;
+       // weapon.nrBulletsTotal++;
     }
 }

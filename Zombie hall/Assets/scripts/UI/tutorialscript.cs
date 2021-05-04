@@ -39,6 +39,7 @@ public class tutorialscript : MonoBehaviour
                 active = true;
                 time = Time.time;
                 Time.timeScale = 0;
+                FindObjectOfType<weapon>().Fire(false);
                 FindObjectOfType<AudioManager>().Play(intro_line);
             }
         }
@@ -49,7 +50,9 @@ public class tutorialscript : MonoBehaviour
     public void functionforbutton()
     {
         tutorial_panel.SetActive(false);
+        FindObjectOfType<weapon>().Fire(true);
         Time.timeScale = 1;
+
     }
 
 
@@ -58,6 +61,7 @@ public class tutorialscript : MonoBehaviour
     {
         tutorial_panel.SetActive(false);
         Time.timeScale = 0;
+        FindObjectOfType<weapon>().Fire(false);
     }
 
 }

@@ -364,7 +364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentStatus: 3
-  doors: []
+  door: {fileID: 0}
   zombie: {fileID: 5799401073779224438}
   blackboard: {fileID: 5799401072496255762}
 --- !u!1 &5799401072859979660
@@ -382,6 +382,7 @@ GameObject:
   - component: {fileID: 5799401073779224438}
   - component: {fileID: 5799401072859979661}
   - component: {fileID: 4760370156475229459}
+  - component: {fileID: 7948816682076814088}
   m_Layer: 0
   m_Name: zombie
   m_TagString: Zombie
@@ -609,6 +610,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &7948816682076814088
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5799401072859979660}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -2.0115483, y: 3.1155205}
+  m_SpriteTilingProperty:
+    border: {x: 5.48, y: 1.9401894, z: 7.5499997, w: 3.1803107}
+    pivot: {x: 0.51839596, y: 0.43745402}
+    oldSize: {x: 21, y: 15.001465}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6.5259757, y: 0.9567785}
+  m_EdgeRadius: 0
 --- !u!1 &5799401072861688885
 GameObject:
   m_ObjectHideFlags: 0
@@ -1305,6 +1332,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentStatus: 3
+  zombie: {fileID: 0}
+  location: {fileID: 0}
+  blackboard: {fileID: 0}
 --- !u!1 &5799401074464733999
 GameObject:
   m_ObjectHideFlags: 0

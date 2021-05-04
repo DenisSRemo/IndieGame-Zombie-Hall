@@ -40,7 +40,22 @@ public class grenade_trap_script : MonoBehaviour
                 }
             }
         }
-        
+        if (BlastRadius > 0)
+        {
+            Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, BlastRadius);
+            foreach (Collider2D hitCollider in hitColliders)
+            {
+                var enemy = hitCollider.GetComponent<Zombie2>();
+                if (enemy)
+                {
+                    var closestPosition = hitCollider.ClosestPoint(transform.position);
+                    var distance = Vector3.Distance(closestPosition, transform.position);
+                    var damagePercent = Mathf.InverseLerp(BlastRadius, 0, distance);
+                    enemy.TakeHit(damagePercent * Damage);
+                }
+            }
+        }
+
     }
 
 

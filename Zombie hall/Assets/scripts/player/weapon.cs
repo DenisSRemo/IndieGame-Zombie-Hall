@@ -14,7 +14,7 @@ public class weapon : MonoBehaviour
     public int nrbullets=0;
     public int nrBulletsTotal = 60;
     public TextMeshProUGUI text_ammo;
-
+    public bool fire;
 
     public bool pistol;
     public bool SMG;
@@ -23,17 +23,21 @@ public class weapon : MonoBehaviour
 
     private void Start()
     {
+        fire = true;
        text_ammo.text = 0 + "/" + nrBulletsTotal;
+
+       
     }
 
     void Update()
     {
+
         //the magazine size, fire mode and fire rate depends on the type of weapon
         if (pistol)
         {
 
             firerate = 0.2f;
-            if (Input.GetMouseButtonDown(0) && nrbullets > 0 && nrBulletsTotal >= 0)
+            if (Input.GetMouseButtonDown(0) && nrbullets > 0 && nrBulletsTotal >= 0&&fire)
             {
                 if (Time.time - timetoshoot >= firerate)
                 {
@@ -48,7 +52,7 @@ public class weapon : MonoBehaviour
             {
                 //before shooting you must press R to reload
                 //the magazine has 7 bullets
-                if (Input.GetKeyDown(KeyCode.R) && nrBulletsTotal > 0 && nrbullets != 7)
+                if (Input.GetKeyDown(KeyCode.R) && nrBulletsTotal > 0 && nrbullets != 7 )
                 {
                     if (nrBulletsTotal < 7 && nrBulletsTotal > 0 && nrBulletsTotal + nrbullets <= 7)
                     {
@@ -74,7 +78,7 @@ public class weapon : MonoBehaviour
         {
             firerate = 0.1f;
 
-            if (Input.GetMouseButtonDown(0) && nrbullets > 0 && nrBulletsTotal >= 0)
+            if (Input.GetMouseButtonDown(0) && nrbullets > 0 && nrBulletsTotal >= 0 && fire)
             {
                 if (Time.time - timetoshoot >= firerate)
                 {
@@ -125,7 +129,7 @@ public class weapon : MonoBehaviour
         if(AR)
         {
             firerate = 0.2f;
-            if (Input.GetMouseButton(0) && nrbullets > 0 && nrBulletsTotal >= 0)
+            if (Input.GetMouseButton(0) && nrbullets > 0 && nrBulletsTotal >= 0 && fire)
             {
                 if (Time.time - timetoshoot >= firerate)
                 {
@@ -171,4 +175,10 @@ public class weapon : MonoBehaviour
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         
     }
+
+    public void Fire(bool shoot)
+    {
+        fire = shoot;
+    }
+
 }
