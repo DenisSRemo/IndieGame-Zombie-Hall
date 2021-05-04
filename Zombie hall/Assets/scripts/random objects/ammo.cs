@@ -2,25 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlusOneBullet : MonoBehaviour
+public class ammo : MonoBehaviour
 {
     // Start is called before the first frame update
-
-   // [SerializeField] private weapon weapon;
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
 
-    public void PlusOneBulletFunction(weapon weapon)
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        weapon.nrBulletsTotal++;
+        if (collision.tag == "Player")
+        {
+            
+            Destroy(gameObject);
+        }
+
     }
+
 }

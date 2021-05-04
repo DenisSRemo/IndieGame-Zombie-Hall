@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class manager : MonoBehaviour
 {
 
-
+    //this class dealts with the in-game UI
 
     public GameObject Object;
     private bool index;
