@@ -11,7 +11,6 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
-        //it will create am audio source for every sound effect saved in the array
         foreach(Sound s in sounds)
         {
             s.source= gameObject.AddComponent<AudioSource>();
@@ -21,7 +20,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    //when called, it would play the specific sound effect based on the name
+
     public void Play(string name)
     {
        Sound s= Array.Find(sounds, sound => sound.name == name);
@@ -39,5 +38,13 @@ public class AudioManager : MonoBehaviour
 
 
 
-    
+    void Start()
+    {
+        
+    }
+
+    void Update()
+    {
+        
+    }
 }

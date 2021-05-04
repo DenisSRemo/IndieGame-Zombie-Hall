@@ -4,33 +4,32 @@ using UnityEngine;
 
 public class ohnoscript : MonoBehaviour
 {
-    //this class helps explaining to the player the consequences of the trap door trap
 
     [SerializeField] private GameObject tutorial_panel;
     private bool active;
     private float time;
-  [SerializeField]  private lever lever;
-    private bool isItTrue;
+  [SerializeField]  private lever aaaaa;
+    private bool bbbb;
     // Start is called before the first frame update
     void Start()
     {
         active = false;
         tutorial_panel.SetActive(false);
         //time = Time.time;
-        isItTrue = false;
+        bbbb = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (lever.pulled&& isItTrue == false)
+        if (aaaaa.pulled&& bbbb==false)
         {
             time = Time.time;
-            isItTrue = true;
+            bbbb = true;
         }
 
         
-            if (active == false&& isItTrue && Time.time-time>5)
+            if (active == false&&bbbb&&Time.time-time>5)
             {
                 tutorial_panel.SetActive(true);
                 active = true;

@@ -7,10 +7,10 @@ public class UI : MonoBehaviour
 
 
 
-    // code for some UI elements
+
 
     public GameObject Image, Button, Button1, Image2,Object;
-   
+    // Start is called before the first frame update
     void Start()
     {
         Image.SetActive(false);
@@ -20,7 +20,7 @@ public class UI : MonoBehaviour
         Object.SetActive(false);
     }
 
-    
+    // Update is called once per frame
     void Update()
     {
         
