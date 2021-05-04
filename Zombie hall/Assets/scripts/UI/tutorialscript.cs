@@ -5,12 +5,14 @@ using UnityEngine;
 public class tutorialscript : MonoBehaviour
 {
 
+    //this class dealts with the UI in the tutorial level and later was used in some UI elements in the rest of the levels
+    
 
     [SerializeField] private GameObject tutorial_panel;
     private bool active;
     private float time;
     [SerializeField] private string intro_line;
-    // Start is called before the first frame update
+    
     void Start()
     {
         active = false;

@@ -28,6 +28,7 @@ public class weapon : MonoBehaviour
 
     void Update()
     {
+        // there are different magazine sizes, fire modes and fire rates for each type of weapon
         if (pistol)
         {
 
@@ -45,6 +46,8 @@ public class weapon : MonoBehaviour
             }
             else
             {
+                //before shooting you must press R to reload
+                //the magazine has 7 bullets
                 if (Input.GetKeyDown(KeyCode.R) && nrBulletsTotal > 0 && nrbullets != 7)
                 {
                     if (nrBulletsTotal < 7 && nrBulletsTotal > 0 && nrBulletsTotal + nrbullets <= 7)
@@ -136,10 +139,10 @@ public class weapon : MonoBehaviour
             else
             {
                 //before shooting you must press R to reload
-                //the magazine has 30 bullets
-                if (Input.GetKeyDown(KeyCode.R) && nrBulletsTotal > 0 && nrbullets != 30)
+                //the magazine has 20 bullets
+                if (Input.GetKeyDown(KeyCode.R) && nrBulletsTotal > 0 && nrbullets != 20)
                 {
-                    if (nrBulletsTotal < 30 && nrBulletsTotal > 0 && nrBulletsTotal + nrbullets <= 30)
+                    if (nrBulletsTotal < 20 && nrBulletsTotal > 0 && nrBulletsTotal + nrbullets <= 20)
                     {
                         nrBulletsTotal = nrBulletsTotal + nrbullets;
                         nrbullets = nrBulletsTotal;
@@ -149,8 +152,8 @@ public class weapon : MonoBehaviour
                     else
                     {
                         nrBulletsTotal = nrBulletsTotal + nrbullets;
-                        nrBulletsTotal = nrBulletsTotal - 30;
-                        nrbullets = 30;
+                        nrBulletsTotal = nrBulletsTotal - 20;
+                        nrbullets = 20;
 
                     }
 

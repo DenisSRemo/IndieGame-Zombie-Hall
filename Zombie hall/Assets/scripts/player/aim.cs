@@ -10,7 +10,7 @@ public class aim : MonoBehaviour
     private bool facingRight;
     private BoxCollider2D boxCollider2D;
 
-    private float bbbb;
+    private float number;
 
     [SerializeField] private bool crouching = false;
     private bool move = false;
@@ -32,7 +32,7 @@ public class aim : MonoBehaviour
         boxCollider2D = transform.GetComponent<BoxCollider2D>();
 
 
-        bbbb = transform.position.z;
+        number = transform.position.z;
         Vector3 u;
 
     }
@@ -50,7 +50,7 @@ public class aim : MonoBehaviour
         Vector3 u;
         u.x = transform.position.x;
         u.y = transform.position.y;
-        u.z = bbbb;
+        u.z = number;
         transform.position = u;
        
         //rotate towards mouse
@@ -63,10 +63,11 @@ public class aim : MonoBehaviour
         angle = angle - 180;
 
        // Debug.Log(angle);
+      //limits the rotation of the main character's head and arms between  the angles below
         if(angle>=-30||angle<=-150)
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
         
-        if (positionOnScreen.x >= mouseOnScreen.x)
+        if (positionOnScreen.x >= mouseOnScreen.x&&(angle >= -30 || angle <= -150) )
         {
             transform.Rotate(0, 180, 180);
 
@@ -80,7 +81,7 @@ public class aim : MonoBehaviour
 
     }
 
-    
+    //calculates the angle between the mouse and the rotation of the character
     float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
     {
         return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
