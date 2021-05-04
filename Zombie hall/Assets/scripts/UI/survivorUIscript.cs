@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class survivorUIscript : MonoBehaviour
 {
-    
-    //this class dealts with the character interactions in the game
-
-
 
     [SerializeField] private GameObject panel,panel2,panel3;
     private bool active;
