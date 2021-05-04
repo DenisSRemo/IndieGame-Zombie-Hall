@@ -7,7 +7,9 @@ using UnityEngine.SceneManagement;
 public class manager : MonoBehaviour
 {
 
-
+    /// <summary>
+    /// this class deals with the in-game UI and the function for buttons which switch scenes
+    /// </summary>
 
     public GameObject Object;
     private bool index;

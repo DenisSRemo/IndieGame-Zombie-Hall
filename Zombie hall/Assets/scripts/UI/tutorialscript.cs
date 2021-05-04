@@ -5,6 +5,9 @@ using UnityEngine;
 public class tutorialscript : MonoBehaviour
 {
 
+    /// <summary>
+    /// this class deals with the UI in the tutorial levels. Later it was used in other levels for some UI elements
+    /// </summary>
 
     [SerializeField] private GameObject tutorial_panel;
     private bool active;

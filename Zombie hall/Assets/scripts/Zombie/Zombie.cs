@@ -90,11 +90,19 @@ public class Zombie : MonoBehaviour
         private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Bullet")
-            TakeHit(70);
-       
-        
+            if (FindObjectOfType<weapon>().pistol)
+                health = health - 60;
+            else
+                if (FindObjectOfType<weapon>().SMG)
+                health = health - 20;
+            else
+                if (FindObjectOfType<weapon>().AR)
+                health = health - 40;
+
+
     }
 
+    // function which detects the player
     private bool CanSeePlayer(float distance,float r)
     {
 
@@ -177,7 +185,7 @@ public class Zombie : MonoBehaviour
     }
 
 
-
+    // function which detects doors
     private bool CanSeeDoor(float distance, float r)
     {
 

@@ -28,7 +28,9 @@ public class Zombie2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(player.transform.position.y - gameObject.transform.position.y);
+        //Debug.Log(player.transform.position.y - gameObject.transform.position.y);
+
+        //the target depends if the zombie and the player are in the same room
         if (Mathf.Abs( player.transform.position.y - gameObject.transform.position.y) >= 5)
         {
             target = doors[0];
@@ -53,6 +55,7 @@ public class Zombie2 : MonoBehaviour
     {
         if (collision.tag == "Bullet")
         {
+            //the damage is based on the type of weapon chosen by the player
            if( FindObjectOfType<weapon>().pistol)
             health = health - 60;
            else

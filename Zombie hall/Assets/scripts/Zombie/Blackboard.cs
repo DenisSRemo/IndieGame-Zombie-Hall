@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Blackboard : MonoBehaviour
 {
+    /// <summary>
+    /// all the information needed for the zombie behavior tree to work properly
+    /// </summary>
     public player Player;
     public float speed;
     public Transform player;

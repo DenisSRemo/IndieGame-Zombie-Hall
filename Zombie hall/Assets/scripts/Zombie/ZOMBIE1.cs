@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ZOMBIE1 : MonoBehaviour
 {
+    /// <summary>
+    /// the top of a zombie's behaviour tree
+    /// </summary>
     public BehaviourTree ZombieAI;
          
            public Sequence Patrol;

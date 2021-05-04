@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class spawn_zombie : MonoBehaviour
 {
-
+    /// <summary>
+    /// this deals with the zombie horde mechanic
+    /// </summary>
 
     public GameObject[] zombies;
     

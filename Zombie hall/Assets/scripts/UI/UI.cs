@@ -5,7 +5,9 @@ using UnityEngine;
 public class UI : MonoBehaviour
 {
 
-
+    /// <summary>
+    /// this class deals with some of the UI elements in the game
+    /// </summary>
 
 
 
