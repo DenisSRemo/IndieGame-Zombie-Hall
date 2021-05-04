@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class ExitDoor : MonoBehaviour
 {
+
+    /// <summary>
+    /// this class is not used due to feedback on the door mechanic
+    /// </summary>
     [SerializeField] private Transform A;
 
     [SerializeField] private player Player;

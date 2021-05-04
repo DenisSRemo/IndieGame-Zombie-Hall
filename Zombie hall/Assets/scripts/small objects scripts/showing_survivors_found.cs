@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class showing_survivors_found : MonoBehaviour
 {
-
+    /// <summary>
+    /// this classes helps with showing all the survivors the player find throughout the game
+    /// </summary>
      [SerializeField]
     private bool S1, S2, S3, S4;
 

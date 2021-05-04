@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class lever : MonoBehaviour
 {
-
+    /// <summary>
+    /// this class dealts with the lever for the trap door
+    /// </summary>
 
     [SerializeField] private GameObject Trap_door;
     public bool pulled;

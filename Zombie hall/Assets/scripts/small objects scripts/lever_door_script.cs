@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class lever_door_script : MonoBehaviour
 {
-
+    /// <summary>
+    /// this class deals with the level for the safe room
+    /// </summary>
     public Transform Position1;
     public Transform Position2;
     public GameObject door;

@@ -123,6 +123,8 @@ public class player : MonoBehaviour
 
             exitDoor = true;
 
+
+        //throws grenade
         if(Input.GetKeyDown(KeyCode.G))
         {
             if(numberGranades!=0)
@@ -134,7 +136,7 @@ public class player : MonoBehaviour
 
         }
 
-
+        //plants grenade trap
         if (Input.GetKeyDown(KeyCode.T))
         {
             if(numberGranades!=0)
@@ -145,7 +147,7 @@ public class player : MonoBehaviour
             
         }
 
-
+        //game over
         if(health<=0)
         {
             Loser.SetActive(true);
@@ -158,12 +160,13 @@ public class player : MonoBehaviour
         number_grenades_text.text = "grenades:" + numberGranades;
     }
 
+    //calculates angle between character and mouse
     float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
     {
         return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
     }
 
-
+    //checks if there is ground under the character for it to jump
     private bool IsGrounded()
     {
         RaycastHit2D RaycastHit2D = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.down,.1f,layer);

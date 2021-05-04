@@ -16,7 +16,7 @@ public class Instakill : MonoBehaviour
         
     }
 
-
+    //it is part of the trap door mechanic. It instantly destroyes the zombie which fall in the trap
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Zombie")

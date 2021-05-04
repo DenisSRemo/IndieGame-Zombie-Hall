@@ -10,14 +10,14 @@ public class body_animation : MonoBehaviour
     private bool walking;
 
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         walking = false;
         animator.SetBool("walking", false);
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
 

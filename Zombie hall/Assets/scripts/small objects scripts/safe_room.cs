@@ -18,7 +18,7 @@ public class safe_room : MonoBehaviour
         
     }
 
-
+    //if the player finds the supplies and enters a safe room, the player finishes the level
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")

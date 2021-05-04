@@ -5,7 +5,9 @@ using UnityEngine;
 public class Keeping_count_survivors : MonoBehaviour
 {
 
-    
+    /// <summary>
+    /// this class keep count of the survivors found by the player
+    /// </summary>
     public static bool survivor1, survivor2, survivor3, survivor4;
    
     void Start()

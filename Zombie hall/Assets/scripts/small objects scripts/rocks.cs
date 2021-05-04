@@ -12,7 +12,7 @@ public class rocks : MonoBehaviour
        
     }
 
-    // Update is called once per frame
+    // the rocks were programmed to be destroyed after a certain time so they were not interfier with the character's movement
     void Update()
     {
         if ( Input.GetKeyDown(KeyCode.E)&&Lever.pulled==true)
@@ -23,11 +23,16 @@ public class rocks : MonoBehaviour
         
     }
   
-
+    //the rockes are designed to chip a little bit of health from the zombies
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.tag == "Zombie")
+        {
+            var enemy = collision.collider.GetComponent<Zombie>();
+            enemy.TakeHit(90);
+        }
+         if (collision.collider.tag == "Zombie2")
         {
             var enemy = collision.collider.GetComponent<Zombie>();
             enemy.TakeHit(90);

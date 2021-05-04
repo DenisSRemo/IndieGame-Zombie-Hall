@@ -66,7 +66,7 @@ public class aim : MonoBehaviour
         if(angle>=-30||angle<=-150)
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
         
-        if (positionOnScreen.x >= mouseOnScreen.x)
+        if (positionOnScreen.x >= mouseOnScreen.x&&(angle >= -30 || angle <= -150))
         {
             transform.Rotate(0, 180, 180);
 

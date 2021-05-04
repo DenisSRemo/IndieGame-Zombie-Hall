@@ -37,7 +37,7 @@ public class GrenadeScript : MonoBehaviour
         }
     }
 
-
+    // the damage is calculated based on the distance between the granade and the zombie
     void Explode()
     {
         if (BlastRadius > 0)

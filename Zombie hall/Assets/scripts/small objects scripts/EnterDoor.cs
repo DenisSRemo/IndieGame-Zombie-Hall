@@ -34,7 +34,7 @@ public class EnterDoor : MonoBehaviour
 
   
 
-
+    //the player and the zombies would use a door depending on different conditions
     private void OnTriggerStay2D(Collider2D collision)
     {
       

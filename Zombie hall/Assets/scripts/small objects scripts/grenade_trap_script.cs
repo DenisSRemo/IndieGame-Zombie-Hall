@@ -22,7 +22,7 @@ public class grenade_trap_script : MonoBehaviour
     }
 
 
-
+    //the damage is calculated based on the disatnce between the grenade trap and the zombie
     void Explode()
     {
         if (BlastRadius > 0)

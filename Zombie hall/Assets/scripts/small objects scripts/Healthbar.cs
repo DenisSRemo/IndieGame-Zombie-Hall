@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Healthbar2 : MonoBehaviour
+public class Healthbar : MonoBehaviour
 {
-    [SerializeField] private Zombie2 zombie;
+    /// <summary>
+    /// dealts wiyh the health of a type of zombie
+    /// </summary>
+    [SerializeField] private Zombie zombie;
     private Vector3 localSc;
     // Start is called before the first frame update
     void Start()
@@ -15,7 +18,7 @@ public class Healthbar2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        localSc.x = zombie.health/2 ;
+        localSc.x = zombie.health / 10;
         transform.localScale = localSc;
     }
 }
