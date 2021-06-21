@@ -28,11 +28,11 @@ public class ZombieAI : BehaviourTree
                 currentChild = children[0];
             if (blackboard.chase)
 
-                currentChild = children[2];
+                currentChild = children[1];
 
 
 
-            if (currentChild == children[2] && s == Status.Success)
+            if (currentChild == children[1] && s == Status.Success)
 
             {
                 blackboard.patrol = true;

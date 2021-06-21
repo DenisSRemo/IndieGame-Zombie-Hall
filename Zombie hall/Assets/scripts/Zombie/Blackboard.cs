@@ -13,7 +13,7 @@ public class Blackboard : MonoBehaviour
     public Transform zombie;
     public List<Transform> Nodes;
     public Vector3 Last_known_position;
-    public Transform Noise_Location;
+    
     public Vector3 target;
     public bool patrol;
     public bool investigate;
