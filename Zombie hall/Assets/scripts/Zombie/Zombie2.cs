@@ -16,6 +16,9 @@ public class Zombie2 : MonoBehaviour
     [SerializeField] private List<Transform> positions;
     private float timing;
     public bool exiting;
+    public float damageMultiplier;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +26,8 @@ public class Zombie2 : MonoBehaviour
         health = 100;
         timing = Time.time;
         exiting = false;
+        damageMultiplier = 1f;
+
     }
 
     // Update is called once per frame
@@ -59,13 +64,13 @@ public class Zombie2 : MonoBehaviour
         {
             //the damage is based on the type of weapon chosen by the player
            if( FindObjectOfType<weapon>().pistol)
-            health = health - 60;
+            health = health - 60*damageMultiplier;
            else
                  if (FindObjectOfType<weapon>().SMG)
-                health = health - 25;
+                health = health - 25*damageMultiplier;
            else
                  if (FindObjectOfType<weapon>().AR)
-                health = health - 40;
+                health = health - 40*damageMultiplier;
         }
             
         if (health <= 0)

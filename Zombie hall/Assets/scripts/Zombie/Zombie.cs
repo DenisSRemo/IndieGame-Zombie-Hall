@@ -19,6 +19,7 @@ public class Zombie : MonoBehaviour
     [SerializeField]public float r = -1;
     private float d1;
     private float d2;
+    public float damageMultiplier;
 
 
     // Start is called before the first frame update
@@ -30,6 +31,7 @@ public class Zombie : MonoBehaviour
         facingRight = true;
         d1 = fovdistance;
         d2 = fovdistance * 2;
+        damageMultiplier = 1f;
 
     }
 
@@ -91,13 +93,13 @@ public class Zombie : MonoBehaviour
     {
         if (collision.tag == "Bullet")
             if (FindObjectOfType<weapon>().pistol)
-                health = health - 60;
+                health = health - 60*damageMultiplier;
             else
                 if (FindObjectOfType<weapon>().SMG)
-                health = health - 25;
+                health = health - 25 * damageMultiplier;
             else
                 if (FindObjectOfType<weapon>().AR)
-                health = health - 40;
+                health = health - 40 * damageMultiplier;
 
 
     }

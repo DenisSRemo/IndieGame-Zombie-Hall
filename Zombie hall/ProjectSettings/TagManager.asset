@@ -15,6 +15,10 @@ TagManager:
   - Rock
   - Zombie2
   - Instakill
+  - headzombie
+  - bodyzombie
+  - armszombie
+  - legszombie
   layers:
   - Default
   - TransparentFX
@@ -31,7 +35,7 @@ TagManager:
   - Zombie
   - Door
   - Rocks
-  - 
+  - Zombie2
   - 
   - 
   - 

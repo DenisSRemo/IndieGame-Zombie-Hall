@@ -9570,6 +9570,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: zombie
       objectReference: {fileID: 0}
+    - target: {fileID: 5799401072859979661, guid: db4ebed42be285b4e8ac9a3387eaa676,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5799401073531480990, guid: db4ebed42be285b4e8ac9a3387eaa676,
         type: 3}
       propertyPath: player
