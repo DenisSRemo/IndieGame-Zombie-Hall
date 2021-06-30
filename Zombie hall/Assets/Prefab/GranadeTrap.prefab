@@ -123,3 +123,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 100
   BlastRadius: 1
+  explosionEffect: {fileID: 100002, guid: 872363974360b1540b92d8d9e0453afa, type: 3}

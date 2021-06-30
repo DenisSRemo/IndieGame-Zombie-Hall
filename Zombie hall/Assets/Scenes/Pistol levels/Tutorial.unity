@@ -18513,7 +18513,7 @@ PrefabInstance:
     - target: {fileID: 8409086130901422853, guid: 0353c90699c2153468bb04b763617a9f,
         type: 3}
       propertyPath: numberGranades
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8409086130901422856, guid: 0353c90699c2153468bb04b763617a9f,
         type: 3}

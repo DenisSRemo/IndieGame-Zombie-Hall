@@ -7,7 +7,7 @@ public class grenade_trap_script : MonoBehaviour
 
     public float Damage = 100;
     public float BlastRadius = 1;
-
+    public GameObject explosionEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +56,8 @@ public class grenade_trap_script : MonoBehaviour
             }
         }
 
+        GameObject ExplosionEffectIns = Instantiate(explosionEffect, transform.position, Quaternion.identity);
+        Destroy(ExplosionEffectIns, 10);
     }
 
 

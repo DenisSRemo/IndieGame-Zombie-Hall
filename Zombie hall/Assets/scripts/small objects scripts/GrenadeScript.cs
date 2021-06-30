@@ -14,7 +14,7 @@ public class GrenadeScript : MonoBehaviour
     public float Damage = 400;
     public float BlastRadius=5;
 
-
+    public GameObject explosionEffect;
 
     void Start()
     {
@@ -71,7 +71,10 @@ public class GrenadeScript : MonoBehaviour
                
             }
         }
-       
+
+
+        GameObject ExplosionEffectIns= Instantiate(explosionEffect,transform.position,Quaternion.identity);
+        Destroy(ExplosionEffectIns, 10);
     }
 
 
@@ -83,6 +86,6 @@ public class GrenadeScript : MonoBehaviour
         
     }
 
-
+   
 
 }

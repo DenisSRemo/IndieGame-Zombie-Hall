@@ -149,3 +149,4 @@ MonoBehaviour:
   rb: {fileID: 1934053806115042930}
   Damage: 100
   BlastRadius: 1
+  explosionEffect: {fileID: 100006, guid: a2b9ce854d0a5004cba27ab45cbfe205, type: 3}

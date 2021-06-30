@@ -59,7 +59,7 @@ public class player : MonoBehaviour
         StartingPosition = gameObject.transform.position;
         boxCollider2D = transform.GetComponent<BoxCollider2D>();
 
-        numberGranades = 0;
+        numberGranades = 1;
 
         health = 100;
 
