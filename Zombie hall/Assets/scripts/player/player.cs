@@ -73,13 +73,26 @@ public class player : MonoBehaviour
 
         number_grenades_text.text = "grenades:"+ numberGranades;
 
-        
-        
-    }
+        Debug.Log(Dataexporter.ExportData());
 
-    
+
+
+    }
+    /// <summary>
+    /// the file is generated when you debug the data
+    /// however it generates once per second with the player's coordinates
+    /// or it generates once without the coordinates
+    /// NEEDS MORE TESTING
+    /// 
+    /// </summary>
+
     void Update()
     {
+        
+        Dataexporter.SendToExport("( " + transform.position.x.ToString() + ", " + transform.position.y + " )");
+
+        Debug.Log(Dataexporter.ExportData());
+       
 
         Vector3 pos = transform.position;
 
